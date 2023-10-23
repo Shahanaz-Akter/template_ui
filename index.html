@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Template UI</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/fontawesome_min.css">
 
     <style>
+        /* search button in nav css */
         .search-container {
             width: 300px;
             /* display: block; */
@@ -57,7 +58,7 @@
 
 
         /* checking input css */
-        .checking_input:checked {
+        .checking_input:checked~.pa_list {
             background: #5F5F5F;
 
         }
@@ -74,6 +75,13 @@
         .yy:hover {
             background: #5F5F5F;
         }
+
+        .rotated {
+            transform: rotate(180deg);
+            /* Rotate the SVG by 180 degrees (opposite angle) */
+            transition: transform 0.3s;
+            /* Add a smooth transition effect */
+        }
     </style>
 
 
@@ -83,7 +91,7 @@
 <body>
 
     <!-- navbar start -->
-    <nav class="d-flex justify-content-between  align-items-center border text-primary bg-white">
+    <nav class="d-flex justify-content-between align-items-center border text-primary bg-white p-2">
         <div>
             <div class="d-flex justify-content-between">
                 <div class="d-flex justify-content-between align-items-center">
@@ -152,7 +160,6 @@
 
     </nav>
     <!-- navbar end -->
-
     <!-- sidebar  start -->
     <aside id="" style="background: #3D3D3D; max-width: 300px; height: 100vh; border:2px solid black ;color: white;">
 
@@ -188,23 +195,23 @@
 
         <ul class="mt-4">
 
-            <li class="yy mb-4 me-4 p-2" style="border-radius: 14px ; list-style: none; color: white!important; text-decoration: none!important; ">
+            <li class="yy mb-4 me-4 p-2" style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
                 <div class="d-flex justify-content-between">
                     <span> <i class="fa fa-cog me-2"></i>Dashboard</span>
                 </div>
             </li>
 
-            <li class="yy mb-4 me-4 p-2" style="border-radius: 14px ; list-style: none; color: white!important; text-decoration: none!important; ">
+            <li class="yy mb-4 me-4 p-2" style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
                 <div class="d-flex justify-content-between">
                     <span> <i class="fa fa-cog me-2"></i>Site List</span>
                 </div>
 
             </li>
 
-            <li class="mb-4 me-4" style="border-radius: 14px; list-style: none; color: white!important; text-decoration: none!important; ">
+            <li class="mb-4 me-4" style="border-radius: 12px; list-style: none; color: white!important; text-decoration: none!important; ">
 
                 <input type="checkbox" name="checking_input" id="checking_input" style="display:none" class="checking_input">
-                <label for="checking_input" class="yy pa_list d-flex justify-content-between align-items-center p-2" style="border-radius: 14px ; ">
+                <label for="checking_input" class="yy pa_list d-flex justify-content-between align-items-center p-2" style="border-radius: 12px ; ">
                     <span> <i class="fa fa-cog me-2"></i>Inventory</span>
                     <span class="ms-2">
                         <svg width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -220,20 +227,20 @@
             </li>
 
 
-            <li class="yy mb-4 me-4 p-2" style="border-radius: 14px ; list-style: none; color: white!important; text-decoration: none!important; ">
+            <li class="yy mb-4 me-4 p-2" style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
                 <div class="d-flex justify-content-between">
                     <span> <i class="fa fa-cog me-2"></i>Order List</span>
                 </div>
             </li>
 
 
-            <li class="yy mb-4 me-4 p-2" style="border-radius: 14px ; list-style: none; color: white!important; text-decoration: none!important; ">
+            <li class="yy mb-4 me-4 p-2" style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
                 <div class="d-flex justify-content-between">
                     <span> <i class="fa fa-cog me-2"></i>CMS</span>
                 </div>
             </li>
 
-            <li class="yy mb-4 me-4 p-2" style="border-radius: 14px ; list-style: none; color: white!important; text-decoration: none!important; ">
+            <li class="yy mb-4 me-4 p-2" style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
                 <div class="d-flex justify-content-between">
                     <span> <i class="fa fa-cog me-2"></i>Analytics</span>
                 </div>
@@ -243,26 +250,25 @@
 
                 <input type="checkbox" name="checking_input1" id="checking_input1" style="display:none" class="checking_input">
 
-                <label for="checking_input1" class="d-flex justify-content-between p-2 yy" style="border-radius: 14px ; ">
+                <label for="checking_input1" class="pa_list yy d-flex justify-content-between p-2 yy" style="border-radius: 12px ; ">
                     <span> <i class="fa fa-cog me-2"></i>Cart</span>
-                    <span class="ms-2">
+                    <span class="ms-2 rotated" id="mySvg">
                         <svg width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M10.052 8.9403L5.058 3.8583L0.064 8.9403V5.7723L5.058 0.712296L10.052 5.7723L10.052 8.9403Z" fill="#C9D2D7" />
                         </svg>
                     </span>
                 </label>
                 <ul class="ch_list">
-                    <li class="p-1 mt-2 mb-2" style="background: #504E4E; order: 1px solid silver;border-radius: 12px;">Cart Templates</li>
+                    <li class="p-1 mt-2 mb-2" style="background: #504E4E; order: 1px solid transparent;border-radius: 12px; list-style-type:circle!important;">Cart Templates</li>
                 </ul>
-
             </li>
 
-            <li class="yy mb-4 me-4 p-2" style="border-radius: 14px ; list-style: none; color: white!important; text-decoration: none!important; ">
+            <li class="yy mb-4 me-4 p-2" style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
                 <div class="d-flex justify-content-between">
                     <span> <i class="fa fa-cog me-2"></i>All Templates</span>
                 </div>
             </li>
-            <li class="yy mb-4 me-4 p-2" style="border-radius: 14px ; list-style: none; color: white!important; text-decoration: none!important; ">
+            <li class="yy mb-4 me-4 p-2" style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
                 <div class="d-flex justify-content-between">
                     <span> <i class="fa fa-cog me-2"></i>Apps</span>
                 </div>
@@ -274,6 +280,16 @@
 
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/fontawesome_min.js"></script>
+
+
+    <script>
+        const mySvg = document.getElementById("mySvg");
+
+        mySvg.addEventListener("click", function () {
+            mySvg.classList.toggle("rotated"); // Toggle the 'rotated' class on click
+        });
+
+    </script>
 
 
 
