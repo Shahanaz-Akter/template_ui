@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template UI</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome_min.css">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+    <!-- data table css -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+
+
+            font-family: poppins;
+            box-sizing: border-box;
+
+        }
+
+        /* search button in nav css */
+        .search-container {
+            width: 300px;
+
+        }
+
+        /* input#search-bar {
+            margin: 0 auto; 
+             width: 100%;
+            height: 45px;
+            padding: 0 10px !important;
+            font-size: 1rem;
+            border: 1px solid #D0CFCE;
+            outline: none;
+        } */
+
+        input#search-bar:focus {
+            border: 1px solid #008ABF;
+            transition: 0.35s ease;
+            color: #008ABF;
+        }
+
+        input#search-bar:focus::-webkit-input-placeholder {
+            transition: opacity 0.45s ease;
+            opacity: 0;
+        }
+
+        input#search-bar:focus::-moz-placeholder {
+            transition: opacity 0.45s ease;
+            opacity: 0;
+        }
+
+        input#search-bar:focus:-ms-placeholder {
+            transition: opacity 0.45s ease;
+            opacity: 0;
+        }
+
+        /* .search-icon {
+            position: absolute;
+            float: left;
+            width: 75px;
+            height: 75px;
+            top: -62px;
+            left: 0px;
+        } */
+
+
+        /* checking input css */
+        .checking_input:checked~.pa_list {
+            background: #5F5F5F;
+
+        }
+
+        .ch_list {
+            display: none;
+        }
+
+        /* checking input css */
+        .checking_input:checked~.ch_list {
+            display: block;
+        }
+
+        .yy:hover {
+            background: #5F5F5F;
+        }
+
+        .rotated {
+            transform: rotate(180deg);
+            /* Rotate the SVG by 180 degrees (opposite angle) */
+            transition: transform 0.3s;
+            /* Add a smooth transition effect */
+        }
+
+
+        /* table css */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            /* margin: 0 auto; */
+        }
+
+        th,
+        td {
+            text-align: center !important;
+            padding: 10px !important;
+        }
+
+        th {
+            background-color: #3D3D3D !important;
+            color: white !important;
+        }
+
+
+        /* #example_filter {
+            display: none;
+        } */
+
+        .form-control {
+            background: #F4FAFE !important;
+
+        }
+    </style>
+
+
+</head>
+
+
+<body>
+
+    <div>
+        <div class="d-flex">
+            <!-- right  part start -->
+            <div class="p-4"
+                style="border: 2px solid transparent; background: transparent; width: 1700px; height: 100vh;">
+
+
+                <div class="card p-4" style="border-radius: 10px;">
+
+
+                    <div class="d-flex justify-content-between mb-4">
+                        <div style="font-weight: bold;">Service List</div>
+                        <button class="btn btn-primary">Add Service</button>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-4">
+                        <div>
+                            <div>
+                                <span>
+                                    <!-- <i class="fas fa-filter"></i>
+                                    <span class="me-5">Created (Newest)</span> -->
+                                </span>
+                                <span><img style="width: 25px;" src="filter.png" alt="">
+                                    <span class="">Filter</span></span>
+                            </div>
+                        </div>
+                        <span></span>
+                    </div>
+
+                    <!-- <div class="card p-4"> -->
+
+                    <table id="example" class="table table-striped p-4" style="width:100%">
+
+
+                        <!-- <table class=" p-4"> -->
+                        <thead>
+                            <tr>
+                                <th>Serial No</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                                <th>Time</th>
+                                <th>Duration</th>
+                                <th>Available Time</th>
+                            </tr>
+                        </thead>
+
+
+                        <tbody>
+                            <tr>
+                                <td>01</td>
+                                <td>Hair Spa & Oil Massage</td>
+                                <td>Hair Package. Combo offer</td>
+                                <td>BDT 3,000</td>
+                                <td>Null</td>
+                                <td>2 hours</td>
+                                <td>Null</td>
+                            </tr>
+                            <tr>
+                                <td>02</td>
+                                <td>Pedicure & Manicure</td>
+                                <td> Flawless-looking pedicure</td>
+                                <td>BDT 2,400</td>
+                                <td>Null</td>
+                                <td>2 hours</td>
+                                <td>Tuesday-Thusday <br>
+                                  12.00 PM-8.00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>03</td>
+                                <td>Facial</td>
+                                <td>Herbal Facial</td>
+                                <td>BDT 1,500</td>
+                                <td>08:05 PM</td>
+                                <td>1 hours</td>
+                                <td>Null</td>
+                            </tr>
+                            <tr>
+                                <td>04</td>
+                                <td>Bridal Makeover</td>
+                                <td>Signature makeover</td>
+                                <td>BDT 24,000</td>
+                                <td>12 PM</td>
+                                <td>5 hours</td>
+                                <td>Thursday-Saturday <br>
+                                  9.00 PM-5.00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>05</td>
+                                <td>Hair Cut</td>
+                                <td>Volume layer</td>
+                                <td>BDT 700</td>
+                                <td>Null</td>
+                                <td>30 minutes</td>
+                                <td>Null</td>
+                            </tr>
+                            <tr>
+                                <td>06</td>
+                                <td>Facial</td>
+                                <td>Herbal Facial</td>
+                                <td>BDT 1,500</td>
+                                <td>08:05 PM</td>
+                                <td>1.5 hours</td>
+                                <td>Null</td>
+                            </tr>
+                            <tr>
+                                <td>07</td>
+                                <td>Hair Spa & Oil Massage</td>
+                                <td>Hair Package. Combo offer</td>
+                                <td>BDT 3,000</td>
+                                <td>Null</td>
+                                <td>2 hours</td>
+                                <td>Null</td>
+                            </tr>
+                            <tr>
+                                <td>08</td>
+                                <td>Bridal Makeover</td>
+                                <td>Signature makeover</td>
+                                <td>BDT 24,000</td>
+                                <td>01 PM</td>
+                                <td>6 hours</td>
+                                <td>Fridayday-Saturday <br>
+                                  10.00 AM-5.00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>09</td>
+                                <td>Pedicure & Manicure</td>
+                                <td> Flawless-looking pedicure</td>
+                                <td>BDT 2,400</td>
+                                <td>Null</td>
+                                <td>1.5 hours</td>
+                                <td>Monday-Thusday <br>
+                                  1.00 PM-8.00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>Facial Pro</td>
+                                <td>Herbal Facial</td>
+                                <td>BDT 3,500</td>
+                                <td>08:05 PM</td>
+                                <td>1 hours</td>
+                                <td>Null</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                    <!-- </div> -->
+                </div>
+            </div>
+            <!-- right  part end -->
+        </div>
+
+    </div>
+
+
+    <!-- table jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+
+    <script>
+        new DataTable('#example');
+
+    </script>
+
+
+    <!-- <script src="assets/js/bootstrap.bundle.min.js"></script> -->
+    <script src="assets/js/fontawesome_min.js"></script>
+
+
+
+
+
+</body>
+
+</html>
