@@ -7,6 +7,7 @@
     <title>Template UI</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/fontawesome_min.css">
+
     <!-- data table css -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
 
@@ -61,14 +62,6 @@
             opacity: 0;
         }
 
-        /* .search-icon {
-            position: absolute;
-            float: left;
-            width: 75px;
-            height: 75px;
-            top: -62px;
-            left: 0px;
-        } */
 
 
         /* checking input css */
@@ -137,274 +130,260 @@
             display: flex;
             /* justify-content: space-around; */
         }
-
-        .lulu {
-            transform: rotate(180deg);
-
-        }
     </style>
 </head>
 
 
 <body>
 
-    <div>
-        <!-- navbar start -->
-        <nav class="d-flex justify-content-between align-items-center border text-primary bg-white p-2">
-            <div>
-                <div class="d-flex justify-content-between">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <i class="fa-brands  fa-phoenix-framework  fs-2 me-2"></i>
-                    </div>
-                    <div>
-                        <span class="" style="font-size: 20px; font-weight: 600;">FrameWiz</span>
-                        <div style="color: black;">www.domain.com</div>
-                    </div>
+
+
+
+
+    <!-- navbar start -->
+    <nav class="d-flex justify-content-between align-items-center border text-primary bg-white p-2">
+        <div>
+            <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-between align-items-center">
+                    <i class="fa-brands  fa-phoenix-framework  fs-2 me-2"></i>
+                </div>
+                <div>
+                    <span class="" style="font-size: 20px; font-weight: 600;">FrameWiz</span>
+                    <div style="color: black;">www.domain.com</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center  align-items-center">
+
+
+            <div style="position: relative;">
+                <input class="form-control" id="search-bar" type="text" placeholder="Search....."
+                    style="text-align: left; padding-left: 35px; background: #F4FAFE;">
+                <!-- <input id="search-bar" type="text" placeholder="Search..." style="background: #F4FAFE;"> -->
+
+                <span style="position: absolute; top: 8px; left: 5px;">
+                    <img src="assets/img/search.png" alt="" style="height: 20px; width: 30px;">
+                </span>
+                <!-- <img class="text-blue" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"> -->
+            </div>
+
+            <div class="width_list nav-item mt-1 ms-lg-3 me-lg-3" style="background: #DBDBDB; height: 40px; width: 1px">
+                <!-- <a class="nav-link" href="#"></a> -->
+            </div>
+
+            <div class="nav-item me-md-4 me-sm-4 ms-lg-2  ms-sm-0 ms-md-0 me-3">
+                <div style="border-radius: 15px; border: 2px solid #DFDFDF; background: #DFDFDF;" class="ps-3 pe-3 mt-1"
+                    style="">
+                    <span class="">
+                        <i class="fa-brands fa-slack fa-fade me-2  text-primary"
+                            style="border-radius: 50%; padding: 0px;"></i>
+                    </span>
+                    <span class="text-primary">Light</span>
+
                 </div>
             </div>
 
-            <div class="d-flex justify-content-center  align-items-center">
-
-
-                <div style="position: relative;">
-                    <input class="form-control" id="search-bar" type="text" placeholder="Search....."
-                        style="text-align: left; padding-left: 35px; background: #F4FAFE;">
-                    <!-- <input id="search-bar" type="text" placeholder="Search..." style="background: #F4FAFE;"> -->
-
-                    <span style="position: absolute; top: 8px; left: 5px;">
-                        <img src="assets/img/search.png" alt="" style="height: 20px; width: 30px;">
-                    </span>
-                    <!-- <img class="text-blue" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"> -->
-                </div>
-
-                <div class="width_list nav-item mt-1 ms-lg-3 me-lg-3"
-                    style="background: #DBDBDB; height: 40px; width: 1px">
-                    <!-- <a class="nav-link" href="#"></a> -->
-                </div>
-
-                <div class="nav-item me-md-4 me-sm-4 ms-lg-2  ms-sm-0 ms-md-0 me-3">
-                    <div style="border-radius: 15px; border: 2px solid #DFDFDF; background: #DFDFDF;"
-                        class="ps-3 pe-3 mt-1" style="">
-                        <span class="">
-                            <i class="fa-brands fa-slack fa-fade me-2  text-primary"
-                                style="border-radius: 50%; padding: 0px;"></i>
-                        </span>
-                        <span class="text-primary">Light</span>
-
-                    </div>
-                </div>
-
-                <div class="text-dark">
-                    <i class="fa-regular fa-bell me-3" style="font-size: 25px;"></i>
-                </div>
-
-                <div class="text-dark">
-                    <i class="fa-solid fa-bullhorn me-3" style="font-size: 25px;"></i>
-                </div>
-
-                <div class="width_list nav-item mt-1 ms-lg-3 me-lg-3"
-                    style="background: #DBDBDB; height: 40px; width: 1px">
-                    <!-- <a class="nav-link" href="#"></a> -->
-                </div>
-
-                <div class="nav-item me-md-4 me-sm-4 ms-lg-2">
-                    <div style="border-radius: 20px; border: 2px solid transparent" class="btn btn-primary ps-3 mt-1"
-                        type="submit">
-                        <span>John Dev</span> <img class="ms-3"
-                            style="border-radius: 50%; border: 0px solid white; height: 30px; width: 30px;"
-                            src="assets/img/vege.png">
-                    </div>
-                </div>
-
-                <div class="dropdown">
-                    <div class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    </div>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">mimi</a></li>
-                        <li><a class="dropdown-item" href="#">mimi1</a></li>
-                        <li><a class="dropdown-item" href="#">mimi2</a></li>
-                    </ul>
-                </div>
-
+            <div class="text-dark">
+                <i class="fa-regular fa-bell me-3" style="font-size: 25px;"></i>
             </div>
 
-        </nav>
-        <!-- navbar end -->
+            <div class="text-dark">
+                <i class="fa-solid fa-bullhorn me-3" style="font-size: 25px;"></i>
+            </div>
 
+            <div class="width_list nav-item mt-1 ms-lg-3 me-lg-3" style="background: #DBDBDB; height: 40px; width: 1px">
+                <!-- <a class="nav-link" href="#"></a> -->
+            </div>
 
-
-
-
-        <div class="d-flex">
-
-            <!-- left sidebar  start -->
-            <div id=""
-                style="background: #3D3D3D; max-width: 350px; height: 100vh; border:2px solid black ;color: white;">
-
-                <div class="mb-4 pt-4" style="margin-left:37px;">
-                    <div class="d-flex">
-                        <span>Lets's set up your store</span>
-                        <!-- <span>alu</span> -->
-
-                        <span class="dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <svg width="9" height="11" viewBox="0 0 9 11" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M0.0597032 10.052L5.1417 5.058L0.0597032 0.064H3.2277L8.2877 5.058L3.2277 10.052H0.0597032Z"
-                                    fill="#C9D2D7" />
-                            </svg>
-                        </span>
-                    </div>
-
-                    <span class="dropdown">
-                        <!-- <div class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></div> -->
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">1</a></li>
-                            <li><a class="dropdown-item" href="#">2</a></li>
-                            <li><a class="dropdown-item" href="#">3</a></li>
-                        </ul>
-                    </span>
+            <div class="nav-item me-md-4 me-sm-4 ms-lg-2">
+                <div style="border-radius: 20px; border: 2px solid transparent" class="btn btn-primary ps-3 mt-1"
+                    type="submit">
+                    <span>John Dev</span> <img class="ms-3"
+                        style="border-radius: 50%; border: 0px solid white; height: 30px; width: 30px;"
+                        src="assets/img/vege.png">
                 </div>
+            </div>
 
-                <div class="mb-4 ps-5"
-                    style="background: #d9d9d9; height: 4px; width: 100%; border-radius: 15px; position: relative">
-                    <div
-                        style="background-color:#60B2FF ;height: 6px; width: 25%; border-radius: 15px; position: absolute; top: -1px;left:0;">
-                    </div>
+            <div class="dropdown">
+                <div class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 </div>
-
-                <div class="mb-4" style="margin-left:37px;">
-                    1/7 Completed
-                </div>
-
-                <div class="mb-4" style="background-color: white; height: 2px; width: 100%;"></div>
-
-                <ul class="mt-4">
-
-                    <li class="yy mb-4 me-4 p-2"
-                        style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
-                        <div class="d-flex justify-content-between">
-                            <span> <i class="fa fa-cog me-2"></i>Dashboard</span>
-                        </div>
-                    </li>
-
-                    <li class="yy mb-4 me-4 p-2"
-                        style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
-                        <div class="d-flex justify-content-between">
-                            <span> <i class="fa fa-cog me-2"></i>Site List</span>
-                        </div>
-
-                    </li>
-
-                    <li class="mb-4 me-4 rotate_icon"
-                        style="border-radius: 12px; list-style: none; color: white!important; text-decoration: none!important; ">
-
-                        <input type="checkbox" name="checking_input" id="checking_input" style="display:none"
-                            class="checking_input">
-                        <label for="checking_input"
-                            class="yy pa_list d-flex justify-content-between align-items-center p-2"
-                            style="border-radius: 12px ; ">
-                            <span> <i class="fa fa-cog me-2"></i>Inventory</span>
-                            <!-- <span class="ms-2"> -->
-                            <svg class="move_icon" width="11" height="9" viewBox="0 0 11 9" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M10.052 8.9403L5.058 3.8583L0.064 8.9403V5.7723L5.058 0.712296L10.052 5.7723L10.052 8.9403Z"
-                                    fill="#C9D2D7" />
-                            </svg>
-                            <!-- </span> -->
-                        </label>
-
-                        <ul class="ch_list">
-                            <li class="ps-2 pt-1 pb-1 pe-2 mt-2 mb-2 "
-                                style="background: #504E4E; border: 1px solid transparent;border-radius: 11px;">Products
-                            </li>
-                            <li class="ps-2  pt-1 pb-1 pe-2"
-                                style="background: #504E4E; border: 1px solid  transparent;border-radius: 11px;">Add
-                                Products</li>
-                        </ul>
-                    </li>
-
-
-                    <li class="yy mb-4 me-4 p-2"
-                        style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
-                        <div class="d-flex justify-content-between">
-                            <span> <i class="fa fa-cog me-2"></i>Order List</span>
-                        </div>
-                    </li>
-
-
-                    <li class="yy mb-4 me-4 p-2"
-                        style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
-                        <div class="d-flex justify-content-between">
-                            <span> <i class="fa fa-cog me-2"></i>CMS</span>
-                        </div>
-                    </li>
-
-                    <li class="yy mb-4 me-4 p-2"
-                        style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
-                        <div class="d-flex justify-content-between">
-                            <span> <i class="fa fa-cog me-2"></i>Analytics</span>
-                        </div>
-                    </li>
-
-                    <li class="mb-4 me-4"
-                        style="list-style: none; color: white!important; text-decoration: none!important; ">
-
-                        <input type="checkbox" name="checking_input1" id="checking_input1" style="display:none"
-                            class="checking_input">
-
-                        <label for="checking_input1"
-                            class="pa_list yy d-flex justify-content-between align-items-center p-2 yy"
-                            style="border-radius: 12px ; ">
-                            <span style="border: 1px solid transparent;"> <i class="fa fa-cog me-2"></i>Cart</span>
-                            <!-- <span class="ms-2 rotated" id="mySvg" style="border: 1px solid blue;"> -->
-                            <svg width=" 11" height="9" viewBox="0 0 11 9" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M10.052 8.9403L5.058 3.8583L0.064 8.9403V5.7723L5.058 0.712296L10.052 5.7723L10.052 8.9403Z"
-                                    fill="#C9D2D7" />
-                            </svg>
-                            <!-- </span> -->
-                        </label>
-                        <ul class="ch_list">
-                            <li class="ps-2 pt-1 pb-1 pe-2 mt-2 mb-2 "
-                                style="background: #504E4E; border: 1px solid transparent;border-radius: 11px;">Cart
-                                Templates</li>
-
-                            <!-- <li class="p-1 mt-2 mb-2" style="background: #504E4E; order: 1px solid transparent;border-radius: 12px; list-style-type:circle!important;">Cart Templates</li> -->
-                        </ul>
-                    </li>
-
-                    <li class="yy mb-4 me-4 p-2"
-                        style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
-                        <div class="d-flex justify-content-between">
-                            <span> <i class="fa fa-cog me-2"></i>All Templates</span>
-                        </div>
-                    </li>
-                    <li class="yy mb-4 me-4 p-2"
-                        style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
-                        <div class="d-flex justify-content-between">
-                            <span> <i class="fa fa-cog me-2"></i>Apps</span>
-                        </div>
-                    </li>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">mimi</a></li>
+                    <li><a class="dropdown-item" href="#">mimi1</a></li>
+                    <li><a class="dropdown-item" href="#">mimi2</a></li>
                 </ul>
-
             </div>
-            <!-- left sidebar  end -->
+
+        </div>
+
+    </nav>
+    <!-- navbar end -->
+
+    <div class="d-flex">
+
+        <!-- left sidebar  start -->
+        <div id=""
+            style="background: #3D3D3D; width: 400px; height: 100vh!important; border:2px solid black ;color: white;">
+
+            <div class="mb-4 pt-4" style="margin-left:0px;">
+                <div class="d-flex justify-content-around">
+                    <span>Lets's set up your store</span>
+                    <!-- <span>alu</span> -->
+
+                    <span class="dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <svg width="9" height="11" viewBox="0 0 9 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0.0597032 10.052L5.1417 5.058L0.0597032 0.064H3.2277L8.2877 5.058L3.2277 10.052H0.0597032Z"
+                                fill="#C9D2D7" />
+                        </svg>
+                    </span>
+                </div>
+
+                <span class="dropdown">
+                    <!-- <div class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></div> -->
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">1</a></li>
+                        <li><a class="dropdown-item" href="#">2</a></li>
+                        <li><a class="dropdown-item" href="#">3</a></li>
+                    </ul>
+                </span>
+            </div>
+
+            <div class="mb-4 ps-5"
+                style="background: #d9d9d9; height: 4px; width: 100%; border-radius: 15px; position: relative">
+                <div
+                    style="background-color:#60B2FF ;height: 6px; width: 25%; border-radius: 15px; position: absolute; top: -1px;left:0;">
+                </div>
+            </div>
+
+            <div class="mb-4" style="margin-left:37px;">
+                1/7 Completed
+            </div>
+
+            <div class="mb-4" style="background-color: white; height: 2px; width: 100%;"></div>
+
+            <ul class="mt-4">
+
+                <li class="yy mb-4 me-4 p-2"
+                    style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
+                    <div class="d-flex justify-content-between">
+                        <span> <i class="fa fa-cog me-2"></i>Dashboard</span>
+                    </div>
+                </li>
+
+                <li class="yy mb-4 me-4 p-2"
+                    style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
+                    <div class="d-flex justify-content-between">
+                        <span> <i class="fa fa-cog me-2"></i>Site List</span>
+                    </div>
+
+                </li>
+
+                <li class="mb-4 me-4 rotate_icon"
+                    style="border-radius: 12px; list-style: none; color: white!important; text-decoration: none!important; ">
+
+                    <input type="checkbox" name="checking_input" id="checking_input" style="display:none"
+                        class="checking_input">
+                    <label for="checking_input" class="yy pa_list d-flex justify-content-between align-items-center p-2"
+                        style="border-radius: 12px ; ">
+                        <span> <i class="fa fa-cog me-2"></i>Inventory</span>
+                        <!-- <span class="ms-2"> -->
+                        <svg class="move_icon" width="11" height="9" viewBox="0 0 11 9" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.052 8.9403L5.058 3.8583L0.064 8.9403V5.7723L5.058 0.712296L10.052 5.7723L10.052 8.9403Z"
+                                fill="#C9D2D7" />
+                        </svg>
+                        <!-- </span> -->
+                    </label>
+
+                    <ul class="ch_list">
+                        <li class="ps-2 pt-1 pb-1 pe-2 mt-2 mb-2 "
+                            style="background: #504E4E; border: 1px solid transparent;border-radius: 11px;">Products
+                        </li>
+                        <li class="ps-2  pt-1 pb-1 pe-2"
+                            style="background: #504E4E; border: 1px solid  transparent;border-radius: 11px;">Add
+                            Products</li>
+                    </ul>
+                </li>
 
 
+                <li class="yy mb-4 me-4 p-2"
+                    style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
+                    <div class="d-flex justify-content-between">
+                        <span> <i class="fa fa-cog me-2"></i>Order List</span>
+                    </div>
+                </li>
 
 
+                <li class="yy mb-4 me-4 p-2"
+                    style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
+                    <div class="d-flex justify-content-between">
+                        <span> <i class="fa fa-cog me-2"></i>CMS</span>
+                    </div>
+                </li>
 
-            <!-- right  part start -->
-            <div class="p-4"
-                style="border: 2px solid transparent; background: #EAEAEA; width: 1700px; height: 100vh!important;">
+                <li class="yy mb-4 me-4 p-2"
+                    style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
+                    <div class="d-flex justify-content-between">
+                        <span> <i class="fa fa-cog me-2"></i>Analytics</span>
+                    </div>
+                </li>
+
+                <li class="mb-4 me-4"
+                    style="list-style: none; color: white!important; text-decoration: none!important; ">
+
+                    <input type="checkbox" name="checking_input1" id="checking_input1" style="display:none"
+                        class="checking_input">
+
+                    <label for="checking_input1"
+                        class="pa_list yy d-flex justify-content-between align-items-center p-2 yy"
+                        style="border-radius: 12px ; ">
+                        <span style="border: 1px solid transparent;"> <i class="fa fa-cog me-2"></i>Cart</span>
+                        <!-- <span class="ms-2 rotated" id="mySvg" style="border: 1px solid blue;"> -->
+                        <svg width=" 11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.052 8.9403L5.058 3.8583L0.064 8.9403V5.7723L5.058 0.712296L10.052 5.7723L10.052 8.9403Z"
+                                fill="#C9D2D7" />
+                        </svg>
+                        <!-- </span> -->
+                    </label>
+                    <ul class="ch_list">
+                        <li class="ps-2 pt-1 pb-1 pe-2 mt-2 mb-2 "
+                            style="background: #504E4E; border: 1px solid transparent;border-radius: 11px;">Cart
+                            Templates</li>
+
+                        <!-- <li class="p-1 mt-2 mb-2" style="background: #504E4E; order: 1px solid transparent;border-radius: 12px; list-style-type:circle!important;">Cart Templates</li> -->
+                    </ul>
+                </li>
+
+                <li class="yy mb-4 me-4 p-2"
+                    style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
+                    <div class="d-flex justify-content-between">
+                        <span> <i class="fa fa-cog me-2"></i>All Templates</span>
+                    </div>
+                </li>
+                <li class="yy mb-4 me-4 p-2"
+                    style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
+                    <div class="d-flex justify-content-between">
+                        <span> <i class="fa fa-cog me-2"></i>Apps</span>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+        <!-- left sidebar  end -->
 
 
-                <div class="p-4" style="border-radius: 10px;  background: #FAFAFA;">
+        <!-- right  part start -->
+        <div class="p-4"
+            style="border: 2px solid transparent; background: #EAEAEA; width: 1700px; height: 100vh!important;">
 
-                    <!-- <svg class="lulu" width="11" height="9" viewBox="0 0 11 9" fill="none"
+
+            <div class="p-4" style="border-radius: 10px;  background: #FAFAFA;">
+
+                <!-- <svg class="lulu" width="11" height="9" viewBox="0 0 11 9" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M10.052 8.9403L5.058 3.8583L0.064 8.9403V5.7723L5.058 0.712296L10.052 5.7723L10.052 8.9403Z"
@@ -412,157 +391,154 @@
                     </svg> -->
 
 
-                    <div class="d-flex justify-content-between mb-4">
-                        <div>Product List</div>
-                        <!-- <div> <input type="text"> </div> -->
-                        <div style="position: relative;">
-                            <input id="search-bar" class="form-control search-bar1" type="text" placeholder="Search.."
-                                style="text-align: left; padding-left: 35px; background: #F4FAFE;">
-                            <span style="position: absolute; top: 7px; left: 5px;"><img src="assets/img/search.png"
-                                    alt="" style="height: 20px; width: 30px;"></span>
-                            <!-- <img class="text-blue" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"> -->
-                        </div>
-
+                <div class="d-flex justify-content-between mb-4">
+                    <div>Product List</div>
+                    <!-- <div> <input type="text"> </div> -->
+                    <div style="position: relative;">
+                        <input id="search-bar" class="form-control search-bar1" type="text" placeholder="Search.."
+                            style="text-align: left; padding-left: 35px; background: #F4FAFE;">
+                        <span style="position: absolute; top: 7px; left: 5px;"><img src="assets/img/search.png" alt=""
+                                style="height: 20px; width: 30px;"></span>
+                        <!-- <img class="text-blue" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"> -->
                     </div>
 
-                    <!-- <div class="card p-4"> -->
-
-                    <table id="example" class="table table-bordered pt-4 pb-2" style="width:100%;  ">
-
-                        <!-- <table class=" p-4"> -->
-                        <thead>
-                            <tr>
-                                <th>Product Code</th>
-                                <th>Image</th>
-                                <th>Name</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
-                                <th>Details</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="">
-                                <td>E0985</td>
-                                <td><img src="assets/img/layout1.png" height="80px" width="auto" alt="not available">
-                                </td>
-                                <td>Speaker</td>
-                                <td>BDT 1330</td>
-                                <td>3</td>
-                                <td>Brand -XYZ, Model - XYZ 30 Buds Type - Eatbuds, Connectivity ...</td>
-                                <td>
-                                    <span class="me-3"><i class="fas fa-edit"></i></span>
-                                    <span><i class="fas fa-trash-alt text-danger"></i></span>
-                                </td>
-                            </tr>
-                            <tr class="">
-                                <td>E0783</td>
-                                <td><img src="assets/img/layout1.png" height="80px" width="auto" alt="not available">
-                                </td>
-                                <td>Headphone</td>
-                                <td>BDT 3450</td>
-                                <td>3</td>
-                                <td>Brand -XYZ, Model - XYZ 30 Buds Type - Eatbuds, Connectivity ...</td>
-                                <td>
-                                    <span class="me-3"><i class="fas fa-edit"></i></span>
-                                    <span><i class="fas fa-trash-alt text-danger"></i></span>
-                                </td>
-                            </tr>
-                            <tr class="">
-                                <td>E3385</td>
-                                <td><img src="assets/img/layout1.png" height="80px" width="auto" alt="not available">
-                                </td>
-                                <td>Earbud</td>
-                                <td>BDT 1550</td>
-                                <td>3</td>
-                                <td>Brand -XYZ, Model - XYZ 30 Buds Type - Eatbuds, Connectivity ...</td>
-                                <td>
-                                    <span class="me-3"><i class="fas fa-edit"></i></span>
-                                    <span><i class="fas fa-trash-alt text-danger"></i></span>
-                                </td>
-                            </tr>
-                            <tr class="">
-                                <td>E0783</td>
-                                <td><img src="assets/img/layout1.png" height="80px" width="auto" alt="not available">
-                                </td>
-                                <td>Headphone</td>
-                                <td>BDT 3450</td>
-                                <td>3</td>
-                                <td>Brand -XYZ, Model - XYZ 30 Buds Type - Eatbuds, Connectivity ...</td>
-                                <td>
-                                    <span class="me-3"><i class="fas fa-edit"></i></span>
-                                    <span><i class="fas fa-trash-alt text-danger"></i></span>
-                                </td>
-                            </tr>
-                            <tr class="">
-                                <td>E0985</td>
-                                <td><img src="assets/img/layout1.png" height="80px" width="auto" alt="not available">
-                                </td>
-                                <td>Speaker</td>
-                                <td>BDT 1330</td>
-                                <td>3</td>
-                                <td>Brand -XYZ, Model - XYZ 30 Buds Type - Eatbuds, Connectivity ...</td>
-                                <td>
-                                    <span class="me-3"><i class="fas fa-edit"></i></span>
-                                    <span><i class="fas fa-trash-alt text-danger"></i></span>
-                                </td>
-                            </tr>
-                            <tr class="">
-                                <td>E0783</td>
-                                <td><img src="assets/img/layout1.png" height="80px" width="auto" alt="not available">
-                                </td>
-                                <td>Headphone</td>
-                                <td>BDT 3450</td>
-                                <td>3</td>
-                                <td>Brand -XYZ, Model - XYZ 30 Buds Type - Eatbuds, Connectivity ...</td>
-                                <td>
-                                    <span class="me-3"><i class="fas fa-edit"></i></span>
-                                    <span><i class="fas fa-trash-alt text-danger"></i></span>
-                                </td>
-                            </tr>
-                            <tr class="">
-                                <td>E0985</td>
-                                <td><img src="assets/img/layout1.png" height="80px" width="auto" alt="not available">
-                                </td>
-                                <td>Speaker</td>
-                                <td>BDT 1330</td>
-                                <td>3</td>
-                                <td>Brand -XYZ, Model - XYZ 30 Buds Type - Eatbuds, Connectivity ...</td>
-                                <td>
-                                    <span class="me-3"><i class="fas fa-edit"></i></span>
-                                    <span><i class="fas fa-trash-alt text-danger"></i></span>
-                                </td>
-                            </tr>
-                            <tr class="">
-                                <td>E0985</td>
-                                <td><img src="assets/img/layout1.png" height="80px" width="auto" alt="not available">
-                                </td>
-                                <td>Speaker</td>
-                                <td>BDT 1330</td>
-                                <td>3</td>
-                                <td>Brand -XYZ, Model - XYZ 30 Buds Type - Eatbuds, Connectivity ...</td>
-                                <td>
-                                    <span class="me-3"><i class="fas fa-edit"></i></span>
-                                    <span><i class="fas fa-trash-alt text-danger"></i></span>
-                                </td>
-                            </tr>
-                        </tbody>
-
-                    </table>
-
-
-                    <!-- </div> -->
                 </div>
+
+                <!-- <div class="card p-4"> -->
+
+                <table id="example" class="table table-bordered pt-4 pb-2" style="width:100%;  ">
+
+                    <!-- <table class=" p-4"> -->
+                    <thead>
+                        <tr>
+                            <th>Product Code</th>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Details</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="">
+                            <td>E0985</td>
+                            <td><img src="assets/img/layout1.png" height="80px" width="auto" alt="not available">
+                            </td>
+                            <td>Speaker</td>
+                            <td>BDT 1330</td>
+                            <td>3</td>
+                            <td>Brand -XYZ, Model - XYZ 30 Buds Type - Eatbuds, Connectivity ...</td>
+                            <td>
+                                <span class="me-3"><i class="fas fa-edit"></i></span>
+                                <span><i class="fas fa-trash-alt text-danger"></i></span>
+                            </td>
+                        </tr>
+                        <tr class="">
+                            <td>E0783</td>
+                            <td><img src="assets/img/layout1.png" height="80px" width="auto" alt="not available">
+                            </td>
+                            <td>Headphone</td>
+                            <td>BDT 3450</td>
+                            <td>3</td>
+                            <td>Brand -XYZ, Model - XYZ 30 Buds Type - Eatbuds, Connectivity ...</td>
+                            <td>
+                                <span class="me-3"><i class="fas fa-edit"></i></span>
+                                <span><i class="fas fa-trash-alt text-danger"></i></span>
+                            </td>
+                        </tr>
+                        <tr class="">
+                            <td>E3385</td>
+                            <td><img src="assets/img/layout1.png" height="80px" width="auto" alt="not available">
+                            </td>
+                            <td>Earbud</td>
+                            <td>BDT 1550</td>
+                            <td>3</td>
+                            <td>Brand -XYZ, Model - XYZ 30 Buds Type - Eatbuds, Connectivity ...</td>
+                            <td>
+                                <span class="me-3"><i class="fas fa-edit"></i></span>
+                                <span><i class="fas fa-trash-alt text-danger"></i></span>
+                            </td>
+                        </tr>
+                        <tr class="">
+                            <td>E0783</td>
+                            <td><img src="assets/img/layout1.png" height="80px" width="auto" alt="not available">
+                            </td>
+                            <td>Headphone</td>
+                            <td>BDT 3450</td>
+                            <td>3</td>
+                            <td>Brand -XYZ, Model - XYZ 30 Buds Type - Eatbuds, Connectivity ...</td>
+                            <td>
+                                <span class="me-3"><i class="fas fa-edit"></i></span>
+                                <span><i class="fas fa-trash-alt text-danger"></i></span>
+                            </td>
+                        </tr>
+                        <tr class="">
+                            <td>E0985</td>
+                            <td><img src="assets/img/layout1.png" height="80px" width="auto" alt="not available">
+                            </td>
+                            <td>Speaker</td>
+                            <td>BDT 1330</td>
+                            <td>3</td>
+                            <td>Brand -XYZ, Model - XYZ 30 Buds Type - Eatbuds, Connectivity ...</td>
+                            <td>
+                                <span class="me-3"><i class="fas fa-edit"></i></span>
+                                <span><i class="fas fa-trash-alt text-danger"></i></span>
+                            </td>
+                        </tr>
+                        <tr class="">
+                            <td>E0783</td>
+                            <td><img src="assets/img/layout1.png" height="80px" width="auto" alt="not available">
+                            </td>
+                            <td>Headphone</td>
+                            <td>BDT 3450</td>
+                            <td>3</td>
+                            <td>Brand -XYZ, Model - XYZ 30 Buds Type - Eatbuds, Connectivity ...</td>
+                            <td>
+                                <span class="me-3"><i class="fas fa-edit"></i></span>
+                                <span><i class="fas fa-trash-alt text-danger"></i></span>
+                            </td>
+                        </tr>
+                        <tr class="">
+                            <td>E0985</td>
+                            <td><img src="assets/img/layout1.png" height="80px" width="auto" alt="not available">
+                            </td>
+                            <td>Speaker</td>
+                            <td>BDT 1330</td>
+                            <td>3</td>
+                            <td>Brand -XYZ, Model - XYZ 30 Buds Type - Eatbuds, Connectivity ...</td>
+                            <td>
+                                <span class="me-3"><i class="fas fa-edit"></i></span>
+                                <span><i class="fas fa-trash-alt text-danger"></i></span>
+                            </td>
+                        </tr>
+                        <tr class="">
+                            <td>E0985</td>
+                            <td><img src="assets/img/layout1.png" height="80px" width="auto" alt="not available">
+                            </td>
+                            <td>Speaker</td>
+                            <td>BDT 1330</td>
+                            <td>3</td>
+                            <td>Brand -XYZ, Model - XYZ 30 Buds Type - Eatbuds, Connectivity ...</td>
+                            <td>
+                                <span class="me-3"><i class="fas fa-edit"></i></span>
+                                <span><i class="fas fa-trash-alt text-danger"></i></span>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+
+                <!-- </div> -->
             </div>
-            <!-- right  part end -->
         </div>
+        <!-- right  part end -->
 
     </div>
 
-
     <!-- table jquery -->
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
 
@@ -577,7 +553,7 @@
         })
     </script>
 
-    <!-- <script src="assets/js/bootstrap.bundle.min.js"></script> -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/fontawesome_min.js"></script>
 
     <script>
@@ -624,33 +600,18 @@
         }
     </script>
 
-    <!-- <script>
-    let rotateIcon = document.querySelector('.rotate_icon'); // Use the correct class selector
-    let moveIcon = document.querySelector('.move_icon');     // Use the correct class selector
- 
-    rotateIcon.addEventListener('click', () => {
-     moveIcon.classList.toggle('rotate');
-    });
- </script> -->
-
     <script>
-        // Select the SVG element by its ID
-        let rotateIcon = document.querySelector('.rotate_icon');
-        let moveIcon = document.getElementById('move_icon');
-
-        let isRotated = false;
+        let rotateIcon = document.querySelector('.rotate_icon'); // Use the correct class selector
+        let moveIcon = document.querySelector('.move_icon');     // Use the correct class selector
 
         rotateIcon.addEventListener('click', () => {
-            if (isRotated) {
-                moveIcon.setAttribute('transform', 'rotate(0)');
-            } else {
-                moveIcon.setAttribute('transform', 'rotate(360)');
-            }
+            moveIcon.classList.toggle('rotate');
+            //  moveIcon.setAttribute('transform', 'rotate(360)');
 
-            isRotated = !isRotated;
         });
-
     </script>
+
+
 
 </body>
 
