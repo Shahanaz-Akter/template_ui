@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/fontawesome_min.css">
 
+    <!-- poppins font-family -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+
     <!-- data table css -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
 
@@ -81,6 +85,8 @@
             background: #5F5F5F;
         }
 
+
+
         /* table css */
         table {
             border-collapse: collapse;
@@ -102,7 +108,7 @@
         th,
         td {
             text-align: center !important;
-            padding: 10px 23px !important;
+            padding: 20px 23px !important;
         }
 
 
@@ -147,13 +153,36 @@
             display: flex;
             /* justify-content: space-around; */
         }
+
+        .dataTables_length {
+            color: #919C9D;
+            /* border: 2px solid red; */
+            align-items: center;
+        }
+
+        .dataTables_info {
+            color: #919C9D !important;
+        }
+
+        .dataTables_paginate {
+            color: #919C9D !important;
+        }
+
+        #example {
+            margin-top: 20px !important;
+
+        }
+
+
+        .dt-row {
+            margin-top: 0px !important;
+
+        }
     </style>
+
 </head>
 
-
 <body>
-
-
     <!-- navbar start -->
     <nav class="d-flex justify-content-between align-items-center border text-primary bg-white p-2">
         <div>
@@ -363,16 +392,10 @@
 
             <div class="p-4" style="border-radius: 10px;  background: #FAFAFA;">
 
-                <!-- <svg class="lulu" width="11" height="9" viewBox="0 0 11 9" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M10.052 8.9403L5.058 3.8583L0.064 8.9403V5.7723L5.058 0.712296L10.052 5.7723L10.052 8.9403Z"
-                            fill="#C9D2D7" />
-                    </svg> -->
-
 
                 <div class="d-flex justify-content-between mb-4">
-                    <h4>Appointment List</h4>
+                    <h4 class="fw-bold">Product List</h4>
+
                     <!-- <div> <input type="text"> </div> -->
                     <div style="position: relative;">
                         <input id="search-bar" class="form-control search-bar1" type="text" placeholder="Search.." style="text-align: left; padding-left: 35px; background: #F4FAFE;">
@@ -385,159 +408,277 @@
                 <!-- <div class="card p-4"> -->
 
 
-                <table id="example" class="table table-striped" style="width:100%">
+                <table id="example" class="table " style="width:100%;">
 
 
                     <!-- <table class=" p-4"> -->
                     <thead>
                         <tr>
-                            <th>Serial No</th>
-                            <th>User Name</th>
-                            <th>Time</th>
-                            <th>Date</th>
-                            <th>Home/Away</th>
-                            <th>Mail</th>
-                            <th>Phone</th>
+                            <th>Product Code</th>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Details</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
 
 
                     <tbody>
-                        <tr>
-                            <td>01</td>
-                            <td>Md Shafiq</td>
-                            <td>12:10 PM</td>
-                            <td>02/04/2023</td>
-                            <td>Uttara</td>
-                            <td>xyz@mail.com</td>
-                            <td>01*********</td>
+                        <tr class="align-middle">
+
+
+                            <td>E0985</td>
+                            <td><img src="assets/img/vege.png" height="130px" width="auto" alt="not available"></td>
+                            <td>Earbud</td>
+                            <td>BDT 23,000</td>
+                            <td>5</td>
+                            <td>
+                                <div>Uttara, sector-01;
+                                    <br>
+                                    Road 01.
+                                    <br>
+                                    Dhaka-1230
+                                </div>
+                            </td>
+                            <td>
+                                <span class="me-3"><i class="fas fa-edit"></i></span>
+                                <span><i class="fas fa-trash-alt text-danger"></i></span>
+                            </td>
                         </tr>
-                        <tr>
-                            <td>02</td>
-                            <td>Md kafi</td>
-                            <td>12:40 PM</td>
-                            <td>02/04/2023</td>
-                            <td>Uttara</td>
-                            <td>xyz@mail.com</td>
-                            <td>01*********</td>
+                        <tr class="align-middle">
+
+
+                            <td>E0985</td>
+                            <td><img src="assets/img/vege.png" height="130px" width="auto" alt="not available"></td>
+                            <td>Earbud</td>
+                            <td>BDT 23,000</td>
+                            <td>5</td>
+                            <td>
+                                <div>Uttara, sector-01;
+                                    <br>
+                                    Road 01.
+                                    <br>
+                                    Dhaka-1230
+                                </div>
+                            </td>
+                            <td>
+                                <span class="me-3"><i class="fas fa-edit"></i></span>
+                                <span><i class="fas fa-trash-alt text-danger"></i></span>
+                            </td>
                         </tr>
-                        <tr>
-                            <td>03</td>
-                            <td>Md Rafiq</td>
-                            <td>01:10 PM</td>
-                            <td>02/04/2023</td>
-                            <td>Uttara</td>
-                            <td>xyz@mail.com</td>
-                            <td>01*********</td>
+                        <tr class="align-middle">
+
+
+                            <td>E0985</td>
+                            <td><img src="assets/img/vege.png" height="130px" width="auto" alt="not available"></td>
+                            <td>Earbud</td>
+                            <td>BDT 23,000</td>
+                            <td>5</td>
+                            <td>
+                                <div>Uttara, sector-01;
+                                    <br>
+                                    Road 01.
+                                    <br>
+                                    Dhaka-1230
+                                </div>
+                            </td>
+                            <td>
+                                <span class="me-3"><i class="fas fa-edit"></i></span>
+                                <span><i class="fas fa-trash-alt text-danger"></i></span>
+                            </td>
                         </tr>
-                        <tr>
-                            <td>04</td>
-                            <td>Md Shafin</td>
-                            <td>01:40 PM</td>
-                            <td>02/04/2023</td>
-                            <td>Uttara</td>
-                            <td>xyz@mail.com</td>
-                            <td>01*********</td>
+                        <tr class="align-middle">
+
+
+                            <td>E0985</td>
+                            <td><img src="assets/img/vege.png" height="130px" width="auto" alt="not available"></td>
+                            <td>Earbud</td>
+                            <td>BDT 23,000</td>
+                            <td>5</td>
+                            <td>
+                                <div>Uttara, sector-01;
+                                    <br>
+                                    Road 01.
+                                    <br>
+                                    Dhaka-1230
+                                </div>
+                            </td>
+                            <td>
+                                <span class="me-3"><i class="fas fa-edit"></i></span>
+                                <span><i class="fas fa-trash-alt text-danger"></i></span>
+                            </td>
                         </tr>
-                        <tr>
-                            <td>05</td>
-                            <td>Md Shakib</td>
-                            <td>02:10 PM</td>
-                            <td>02/04/2023</td>
-                            <td>Uttara</td>
-                            <td>xyz@mail.com</td>
-                            <td>01*********</td>
+                        <tr class="align-middle">
+
+
+                            <td>E0985</td>
+                            <td><img src="assets/img/vege.png" height="130px" width="auto" alt="not available"></td>
+                            <td>Earbud</td>
+                            <td>BDT 23,000</td>
+                            <td>5</td>
+                            <td>
+                                <div>Uttara, sector-01;
+                                    <br>
+                                    Road 01.
+                                    <br>
+                                    Dhaka-1230
+                                </div>
+                            </td>
+                            <td>
+                                <span class="me-3"><i class="fas fa-edit"></i></span>
+                                <span><i class="fas fa-trash-alt text-danger"></i></span>
+                            </td>
                         </tr>
-                        <tr>
-                            <td>06</td>
-                            <td>Md Salman</td>
-                            <td>02:40 PM</td>
-                            <td>02/04/2023</td>
-                            <td>Uttara</td>
-                            <td>xyz@mail.com</td>
-                            <td>01*********</td>
+                        <tr class="align-middle">
+
+
+                            <td>E0985</td>
+                            <td><img src="assets/img/vege.png" height="130px" width="auto" alt="not available"></td>
+                            <td>Earbud</td>
+                            <td>BDT 23,000</td>
+                            <td>5</td>
+                            <td>
+                                <div>Uttara, sector-01;
+                                    <br>
+                                    Road 01.
+                                    <br>
+                                    Dhaka-1230
+                                </div>
+                            </td>
+                            <td>
+                                <span class="me-3"><i class="fas fa-edit"></i></span>
+                                <span><i class="fas fa-trash-alt text-danger"></i></span>
+                            </td>
                         </tr>
-                        <tr>
-                            <td>07</td>
-                            <td>Md Manik</td>
-                            <td>03:10 PM</td>
-                            <td>02/04/2023</td>
-                            <td>Uttara</td>
-                            <td>xyz@mail.com</td>
-                            <td>01*********</td>
+                        <tr class="align-middle">
+
+
+                            <td>E0985</td>
+                            <td><img src="assets/img/vege.png" height="130px" width="auto" alt="not available"></td>
+                            <td>Earbud</td>
+                            <td>BDT 23,000</td>
+                            <td>5</td>
+                            <td>
+                                <div>Uttara, sector-01;
+                                    <br>
+                                    Road 01.
+                                    <br>
+                                    Dhaka-1230
+                                </div>
+                            </td>
+                            <td>
+                                <span class="me-3"><i class="fas fa-edit"></i></span>
+                                <span><i class="fas fa-trash-alt text-danger"></i></span>
+                            </td>
                         </tr>
-                        <tr>
-                            <td>08</td>
-                            <td>Md Mafiq</td>
-                            <td>03:40 PM</td>
-                            <td>02/04/2023</td>
-                            <td>Uttara</td>
-                            <td>xyz@mail.com</td>
-                            <td>01*********</td>
+                        <tr class="align-middle">
+
+
+                            <td>E0985</td>
+                            <td><img src="assets/img/vege.png" height="130px" width="auto" alt="not available"></td>
+                            <td>Earbud</td>
+                            <td>BDT 23,000</td>
+                            <td>5</td>
+                            <td>
+                                <div>Uttara, sector-01;
+                                    <br>
+                                    Road 01.
+                                    <br>
+                                    Dhaka-1230
+                                </div>
+                            </td>
+                            <td>
+                                <span class="me-3"><i class="fas fa-edit"></i></span>
+                                <span><i class="fas fa-trash-alt text-danger"></i></span>
+                            </td>
                         </tr>
-                        <tr>
-                            <td>09</td>
-                            <td>Md Saidul</td>
-                            <td>04:10 PM</td>
-                            <td>02/04/2023</td>
-                            <td>Uttara</td>
-                            <td>xyz@mail.com</td>
-                            <td>01*********</td>
+                        <tr class="align-middle">
+
+
+                            <td>E0985</td>
+                            <td><img src="assets/img/vege.png" height="130px" width="auto" alt="not available"></td>
+                            <td>Earbud</td>
+                            <td>BDT 23,000</td>
+                            <td>5</td>
+                            <td>
+                                <div>Uttara, sector-01;
+                                    <br>
+                                    Road 01.
+                                    <br>
+                                    Dhaka-1230
+                                </div>
+                            </td>
+                            <td>
+                                <span class="me-3"><i class="fas fa-edit"></i></span>
+                                <span><i class="fas fa-trash-alt text-danger"></i></span>
+                            </td>
                         </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>Md Omar</td>
-                            <td>04:40 PM</td>
-                            <td>02/04/2023</td>
-                            <td>Uttara</td>
-                            <td>xyz@mail.com</td>
-                            <td>01*********</td>
+                        <tr class="align-middle">
+
+
+                            <td>E0985</td>
+                            <td><img src="assets/img/vege.png" height="130px" width="auto" alt="not available"></td>
+                            <td>Earbud</td>
+                            <td>BDT 23,000</td>
+                            <td>5</td>
+                            <td>
+                                <div>Uttara, sector-01;
+                                    <br>
+                                    Road 01.
+                                    <br>
+                                    Dhaka-1230
+                                </div>
+                            </td>
+                            <td>
+                                <span class="me-3"><i class="fas fa-edit"></i></span>
+                                <span><i class="fas fa-trash-alt text-danger"></i></span>
+                            </td>
                         </tr>
-                        <tr>
-                            <td>11</td>
-                            <td>Md Kowshik</td>
-                            <td>05:10 PM</td>
-                            <td>02/04/2023</td>
-                            <td>Uttara</td>
-                            <td>xyz@mail.com</td>
-                            <td>01*********</td>
+                        <tr class="align-middle">
+
+
+                            <td>E0985</td>
+                            <td><img src="assets/img/vege.png" height="130px" width="auto" alt="not available"></td>
+                            <td>Earbud</td>
+                            <td>BDT 23,000</td>
+                            <td>5</td>
+                            <td>
+                                <div>Uttara, sector-01;
+                                    <br>
+                                    Road 01.
+                                    <br>
+                                    Dhaka-1230
+                                </div>
+                            </td>
+                            <td>
+                                <span class="me-3"><i class="fas fa-edit"></i></span>
+                                <span><i class="fas fa-trash-alt text-danger"></i></span>
+                            </td>
                         </tr>
-                        <tr>
-                            <td>12</td>
-                            <td>Md Jabir</td>
-                            <td>05:40 PM</td>
-                            <td>02/04/2023</td>
-                            <td>Uttara</td>
-                            <td>xyz@mail.com</td>
-                            <td>01*********</td>
+                        <tr class="align-middle">
+
+
+                            <td>E0985</td>
+                            <td><img src="assets/img/vege.png" height="130px" width="auto" alt="not available"></td>
+                            <td>Earbud</td>
+                            <td>BDT 23,000</td>
+                            <td>5</td>
+                            <td>
+                                <div>Uttara, sector-01;
+                                    <br>
+                                    Road 01.
+                                    <br>
+                                    Dhaka-1230
+                                </div>
+                            </td>
+                            <td>
+                                <span class="me-3"><i class="fas fa-edit"></i></span>
+                                <span><i class="fas fa-trash-alt text-danger"></i></span>
+                            </td>
                         </tr>
-                        <tr>
-                            <td>13</td>
-                            <td>Md Rasheed</td>
-                            <td>06:10 PM</td>
-                            <td>02/04/2023</td>
-                            <td>Uttara</td>
-                            <td>xyz@mail.com</td>
-                            <td>01*********</td>
-                        </tr>
-                        <tr>
-                            <td>14</td>
-                            <td>Md Shakil</td>
-                            <td>06:40 PM</td>
-                            <td>02/04/2023</td>
-                            <td>Uttara</td>
-                            <td>xyz@mail.com</td>
-                            <td>01*********</td>
-                        </tr>
-                        <tr>
-                            <td>15</td>
-                            <td>Md Sabbir</td>
-                            <td>07:10 PM</td>
-                            <td>02/04/2023</td>
-                            <td>Uttara</td>
-                            <td>xyz@mail.com</td>
-                            <td>01*********</td>
-                        </tr>
+
                     </tbody>
                 </table>
 
@@ -578,16 +719,9 @@
     </script>
 
 
-
-    <!-- <span>
-        <i class="fas fa-filter"></i>
-        <span class="">Filter</span>
-    </span> -->
-
-
-
     <!-- append filter with icon tag  inside the built in table paragraph-->
     <script>
+
         // Find the parent div by its ID
         var example_length = document.getElementById("example_length");
 
@@ -606,22 +740,44 @@
 
             spanTag.appendChild(iTag);
 
+            let spanTag3 = document.createElement("span");
+            let button = document.createElement("button");
+            button.style.padding = '7px 20px';
+            button.style.background = '#2871FF';
+            button.style.color = 'white';
+            button.style.borderRadius = '10px';
+            button.style.border = 'none';
+            button.style.height = '50px';
+            button.style.width = '150px';
+            button.innerText = "Add to Cart";
+
+
+            // <a href="/service.html">
+            //     <button style="padding: 5px 20px; background-color: blue; color: white;">button</button>
+            //     </a>
+
+            let a_tag = document.createElement("a");
+            a_tag.setAttribute('href', "/service.html");
+
+            // spanTag3.classList = 'ms-5';
+            spanTag3.style.marginLeft = "1100px";
+            spanTag3.style.paddingLeft = "0px";
+
+            a_tag.appendChild(button);
+            spanTag3.appendChild(a_tag);
+
+            console.log(a_tag);
+            console.log(spanTag3);
+
             example_length.appendChild(spanTag);
             example_length.appendChild(spanTag2);
-
+            example_length.appendChild(spanTag3);
         }
+
+
     </script>
 
-    <script>
-        let rotateIcon = document.querySelector('.rotate_icon'); // Use the correct class selector
-        let moveIcon = document.querySelector('.move_icon');     // Use the correct class selector
 
-        rotateIcon.addEventListener('click', () => {
-            moveIcon.classList.toggle('rotate');
-            //  moveIcon.setAttribute('transform', 'rotate(360)');
-
-        });
-    </script>
 
 
 
