@@ -25,6 +25,7 @@
             font-family: 'Poppins', sans-serif;
 
             box-sizing: border-box;
+            overflow: hidden;
         }
 
         /* search button in nav css */
@@ -76,22 +77,30 @@
             display: none;
         }
 
+        .move_icon {
+            transform: rotate(180deg);
+        }
+
         /* checking input css */
         .checking_input:checked~.ch_list {
             display: block;
+        }
+
+        .checking_input:checked~.pa_list .move_icon {
+
+            transform: rotate(0deg);
         }
 
         .yy:hover {
             background: #5F5F5F;
         }
 
-
-
         /* table css */
         table {
             border-collapse: collapse;
             width: 100%;
             border-radius: 10px !important;
+            overflow-y: scroll;
             /* margin: 0 auto; */
         }
 
@@ -108,7 +117,7 @@
         th,
         td {
             text-align: center !important;
-            padding: 20px 23px !important;
+            padding: 10px 15px !important;
         }
 
 
@@ -133,8 +142,6 @@
         table tbody tr:last-child td:last-child {
             border-bottom-right-radius: 10px !important;
         }
-
-
 
         #example_filter {
             display: none;
@@ -171,12 +178,21 @@
         #example {
             margin-top: 20px !important;
 
-        }
 
+        }
 
         .dt-row {
             margin-top: 0px !important;
 
+        }
+
+        .txtt {
+            font-size: 14px;
+        }
+
+        table[aria-describedby="example_info"] thead,
+        table[aria-describedby="example_info"] tfoot {
+            display: none;
         }
     </style>
 
@@ -197,8 +213,7 @@
             </div>
         </div>
 
-        <div class="d-flex justify-content-center  align-items-center">
-
+        <div class="d-flex justify-content-center align-items-center" style="border: 1px solid transparent;">
 
             <div style="position: relative;">
                 <input class="form-control" id="search-bar" type="text" placeholder="Search....." style="text-align: left; padding-left: 35px; background: #F4FAFE;">
@@ -210,19 +225,20 @@
                 <!-- <img class="text-blue" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"> -->
             </div>
 
-            <div class="width_list nav-item mt-1 ms-lg-3 me-lg-3" style="background: #DBDBDB; height: 40px; width: 1px">
+            <div class="width_list nav-item ms-lg-3 me-lg-3" style="background: #DBDBDB; height: 40px; width: 2px">
                 <!-- <a class="nav-link" href="#"></a> -->
             </div>
 
-            <div class="nav-item me-md-4 me-sm-4 ms-lg-2  ms-sm-0 ms-md-0 me-3">
-                <div style="border-radius: 15px; border: 2px solid #DFDFDF; background: #DFDFDF;" class="ps-3 pe-3 mt-1" style="">
+            <div class="me-md-4 me-sm-4 ms-lg-2  ms-sm-0 ms-md-0 me-3">
+                <div style="border-radius: 14px; border: 1px solid #DFDFDF; background: #DFDFDF;" class="ps-2 pe-2  mt-1" style="">
                     <span class="">
-                        <i class="fa-brands fa-slack fa-fade me-2  text-primary" style="border-radius: 50%; padding: 0px;"></i>
+                        <i class="fa-brands fa-slack fa-fade me-2  text-dark" style="border-radius: 50%; padding: 0px;"></i>
                     </span>
                     <span class="text-primary">Light</span>
 
                 </div>
             </div>
+
 
             <div class="text-dark">
                 <i class="fa-regular fa-bell me-3" style="font-size: 25px;"></i>
@@ -232,17 +248,21 @@
                 <i class="fa-solid fa-bullhorn me-3" style="font-size: 25px;"></i>
             </div>
 
-            <div class="width_list nav-item mt-1 ms-lg-3 me-lg-3" style="background: #DBDBDB; height: 40px; width: 1px">
+            <div class="width_list ms-lg-3 me-lg-3" style="background: #DBDBDB; height: 40px; width: 2px">
                 <!-- <a class="nav-link" href="#"></a> -->
             </div>
 
-            <div class="nav-item me-md-4 me-sm-4 ms-lg-2">
-                <div style="border-radius: 20px; border: 2px solid transparent" class="btn btn-primary ps-3 mt-1" type="submit">
-                    <span>John Dev</span> <img class="ms-3" style="border-radius: 50%; border: 0px solid white; height: 30px; width: 30px;" src="assets/img/vege.png">
-                </div>
+
+            <!-- <div class="text-white nav-item mt-3 ms-lg-3 me-lg-3"> -->
+            <div style="border-radius: 25px; " class="bg-primary me-2 text-white ms-lg-3 me-lg-3">
+                <span class="ms-3 me-3">John Dave</span>
+                <span>
+                    <img class="" style="border-radius: 50%; border: 0px solid white; height: 55px; width: 55px;" src="assets/img/vege.png">
+
+                </span>
             </div>
 
-            <div class="dropdown">
+            <span class="dropdown me-2">
                 <div class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 </div>
                 <ul class="dropdown-menu">
@@ -250,7 +270,10 @@
                     <li><a class="dropdown-item" href="#">mimi1</a></li>
                     <li><a class="dropdown-item" href="#">mimi2</a></li>
                 </ul>
-            </div>
+            </span>
+
+            <!-- </div> -->
+
 
         </div>
 
@@ -260,9 +283,9 @@
     <div class="d-flex">
 
         <!-- left sidebar  start -->
-        <div id="" style="background: #3D3D3D; width: 400px; height: 200vh!important; border:2px solid black ;color: white;">
+        <div id="" style="background: #3D3D3D; width: 400px; height: 100vh!important; border:2px solid black ;color: white; position: sticky;">
 
-            <div class="mb-4 pt-4" style="margin-left:0px;">
+            <div class="mb-3 pt-4" style="margin-right:20px;">
                 <div class="d-flex justify-content-around">
                     <span>Lets's set up your store</span>
                     <!-- <span>alu</span> -->
@@ -284,103 +307,94 @@
                 </span>
             </div>
 
-            <div class="mb-4 ps-5" style="background: #d9d9d9; height: 4px; width: 100%; border-radius: 15px; position: relative">
-                <div style="background-color:#60B2FF ;height: 6px; width: 25%; border-radius: 15px; position: absolute; top: -1px;left:0;">
+            <div class="mb-3 ps-5" style="background: #d9d9d9; height: 3px; width: 100%; border-radius: 15px; position: relative">
+                <div style="background-color:#60B2FF ;height: 4px; width: 25%; border-radius: 15px; position: absolute; top: -1px;left:0;">
                 </div>
             </div>
 
-            <div class="mb-4" style="margin-left:37px;">
+            <div class="mb-3" style="margin-left:21px;">
                 1/7 Completed
             </div>
 
-            <div class="mb-4" style="background-color: white; height: 2px; width: 100%;"></div>
+            <div class="mb-3" style="background-color: white; height: 1px; width: 100%;"></div>
 
-            <ul class="mt-4">
+            <div class="mt-2">
 
-                <li class="yy mb-4 me-4 p-2" style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
+                <li class="yy  p-2 mb-3 ms-2 mt-2 me-2" style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
                     <div class="d-flex justify-content-between">
                         <span> <i class="fa fa-cog me-2"></i>Dashboard</span>
                     </div>
                 </li>
-
-                <li class="yy mb-4 me-4 p-2" style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
+                <li class="yy  p-2 mb-3 ms-2 mt-2 me-2" style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
                     <div class="d-flex justify-content-between">
                         <span> <i class="fa fa-cog me-2"></i>Site List</span>
                     </div>
 
                 </li>
-
-                <li class="mb-4 me-4 rotate_icon" style="border-radius: 12px; list-style: none; color: white!important; text-decoration: none!important; ">
+                <li class="mb-3 ms-2 mt-2 me-2 rotate_icon" style="border-radius: 12px; list-style: none; color: white!important; text-decoration: none!important; ">
 
                     <input type="checkbox" name="checking_input" id="checking_input" style="display:none" class="checking_input">
-                    <label for="checking_input" class="yy pa_list d-flex justify-content-between align-items-center p-2" style="border-radius: 12px ; ">
+                    <label for="checking_input" class="yy pa_list d-flex justify-content-between align-items-center p-2" style="border-radius: 11px ; ">
                         <span> <i class="fa fa-cog me-2"></i>Inventory</span>
                         <!-- <span class="ms-2"> -->
-                        <svg class="move_icon" width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="move_icon me-3" width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M10.052 8.9403L5.058 3.8583L0.064 8.9403V5.7723L5.058 0.712296L10.052 5.7723L10.052 8.9403Z" fill="#C9D2D7" />
                         </svg>
                         <!-- </span> -->
                     </label>
 
                     <ul class="ch_list">
-                        <li class="ps-2 pt-1 pb-1 pe-2 mt-2 mb-2 " style="background: #504E4E; border: 1px solid transparent;border-radius: 11px;">Products
+                        <li class="txtt ps-2 pt-1 pb-1 pe-2 mt-2 mb-2 me-2" style="background: #504E4E; border: 1px solid transparent;border-radius: 10px;">Products
                         </li>
-                        <li class="ps-2  pt-1 pb-1 pe-2" style="background: #504E4E; border: 1px solid  transparent;border-radius: 11px;">Add
-                            Products</li>
+                        <li class="txtt ps-2  pt-1 pb-1 pe-2 me-2" style="background: #504E4E; border: 1px solid  transparent;border-radius: 10px;">AddProducts</li>
                     </ul>
                 </li>
-
-
-                <li class="yy mb-4 me-4 p-2" style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
+                <li class="yy  p-2 mb-3 ms-2 mt-2 me-2" style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
                     <div class="d-flex justify-content-between">
                         <span> <i class="fa fa-cog me-2"></i>Order List</span>
                     </div>
                 </li>
-
-
-                <li class="yy mb-4 me-4 p-2" style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
+                <li class="yy  p-2 mb-3 ms-2 mt-2 me-2" style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
                     <div class="d-flex justify-content-between">
                         <span> <i class="fa fa-cog me-2"></i>CMS</span>
                     </div>
                 </li>
-
-                <li class="yy mb-4 me-4 p-2" style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
+                <li class="yy  p-2 mb-3 ms-2 mt-2 me-2" style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
                     <div class="d-flex justify-content-between">
                         <span> <i class="fa fa-cog me-2"></i>Analytics</span>
                     </div>
                 </li>
-
-                <li class="mb-4 me-4" style="list-style: none; color: white!important; text-decoration: none!important; ">
+                <li class="mb-3 ms-2 mt-2 me-2 rotate_icon" style="list-style: none; color: white!important; text-decoration: none!important; ">
 
                     <input type="checkbox" name="checking_input1" id="checking_input1" style="display:none" class="checking_input">
 
-                    <label for="checking_input1" class="pa_list yy d-flex justify-content-between align-items-center p-2 yy" style="border-radius: 12px ; ">
+                    <label for="checking_input1" class="pa_list yy d-flex justify-content-between align-items-center p-2 yy" style="border-radius: 11px ; ">
                         <span style="border: 1px solid transparent;"> <i class="fa fa-cog me-2"></i>Cart</span>
                         <!-- <span class="ms-2 rotated" id="mySvg" style="border: 1px solid blue;"> -->
-                        <svg width=" 11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="me-3" width=" 11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M10.052 8.9403L5.058 3.8583L0.064 8.9403V5.7723L5.058 0.712296L10.052 5.7723L10.052 8.9403Z" fill="#C9D2D7" />
                         </svg>
                         <!-- </span> -->
                     </label>
                     <ul class="ch_list">
-                        <li class="ps-2 pt-1 pb-1 pe-2 mt-2 mb-2 " style="background: #504E4E; border: 1px solid transparent;border-radius: 11px;">Cart
+                        <li class="txtt ps-2 pt-1 pb-1 pe-2 mt-2 mb-2 me-2 " style="background: #504E4E; border: 1px solid transparent;border-radius: 10px;">Cart
                             Templates</li>
 
                         <!-- <li class="p-1 mt-2 mb-2" style="background: #504E4E; order: 1px solid transparent;border-radius: 12px; list-style-type:circle!important;">Cart Templates</li> -->
                     </ul>
                 </li>
-
-                <li class="yy mb-4 me-4 p-2" style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
+                <li class="yy  p-2 mb-3 ms-2 mt-2 me-2" style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
                     <div class="d-flex justify-content-between">
                         <span> <i class="fa fa-cog me-2"></i>All Templates</span>
                     </div>
                 </li>
-                <li class="yy mb-4 me-4 p-2" style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
+                <li class="yy  p-2 mb-3 ms-2 mt-2 me-2" style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
                     <div class="d-flex justify-content-between">
                         <span> <i class="fa fa-cog me-2"></i>Apps</span>
                     </div>
                 </li>
-            </ul>
+
+            </div>
 
         </div>
         <!-- left sidebar  end -->
@@ -389,9 +403,7 @@
         <!-- right  part start -->
         <div class="p-4" style="border: 2px solid transparent; background: #EAEAEA; width: 1700px; height: 100vh!important;">
 
-
-            <div class="p-4" style="border-radius: 10px;  background: #FAFAFA;">
-
+            <div class="p-4" style="border-radius: 10px;  background: #FAFAFA; ">
 
                 <div class="d-flex justify-content-between mb-4">
                     <h4 class="fw-bold">Product List</h4>
@@ -408,282 +420,284 @@
                 <!-- <div class="card p-4"> -->
 
 
-                <table id="example" class="table " style="width:100%;">
 
 
-                    <!-- <table class=" p-4"> -->
-                    <thead>
-                        <tr>
-                            <th>Product Code</th>
-                            <th>Image</th>
-                            <th>Name</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Details</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
+
+                <table id="example" class="table display" style="width:100%;">
+                    <div>
+                        <thead>
+                            <tr>
+                                <th>Product Code</th>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Details</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr class="align-middle">
 
 
-                    <tbody>
-                        <tr class="align-middle">
+                                <td>E0985</td>
+                                <td><img src="assets/img/vege.png" height="100px" width="auto" alt="not available"></td>
+                                <td>Earbud</td>
+                                <td>BDT 23,000</td>
+                                <td>5</td>
+                                <td>
+                                    <div>Uttara, sector-01;
+                                        <br>
+                                        Road 01.
+                                        <br>
+                                        Dhaka-1230
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="me-3"><i class="fas fa-edit"></i></span>
+                                    <span><i class="fas fa-trash-alt text-danger"></i></span>
+                                </td>
+                            </tr>
+                            <tr class="align-middle">
 
 
-                            <td>E0985</td>
-                            <td><img src="assets/img/vege.png" height="130px" width="auto" alt="not available"></td>
-                            <td>Earbud</td>
-                            <td>BDT 23,000</td>
-                            <td>5</td>
-                            <td>
-                                <div>Uttara, sector-01;
-                                    <br>
-                                    Road 01.
-                                    <br>
-                                    Dhaka-1230
-                                </div>
-                            </td>
-                            <td>
-                                <span class="me-3"><i class="fas fa-edit"></i></span>
-                                <span><i class="fas fa-trash-alt text-danger"></i></span>
-                            </td>
-                        </tr>
-                        <tr class="align-middle">
+                                <td>E0985</td>
+                                <td><img src="assets/img/vege.png" height="100px" width="auto" alt="not available"></td>
+                                <td>Earbud</td>
+                                <td>BDT 23,000</td>
+                                <td>5</td>
+                                <td>
+                                    <div>Uttara, sector-01;
+                                        <br>
+                                        Road 01.
+                                        <br>
+                                        Dhaka-1230
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="me-3"><i class="fas fa-edit"></i></span>
+                                    <span><i class="fas fa-trash-alt text-danger"></i></span>
+                                </td>
+                            </tr>
+                            <tr class="align-middle">
 
 
-                            <td>E0985</td>
-                            <td><img src="assets/img/vege.png" height="130px" width="auto" alt="not available"></td>
-                            <td>Earbud</td>
-                            <td>BDT 23,000</td>
-                            <td>5</td>
-                            <td>
-                                <div>Uttara, sector-01;
-                                    <br>
-                                    Road 01.
-                                    <br>
-                                    Dhaka-1230
-                                </div>
-                            </td>
-                            <td>
-                                <span class="me-3"><i class="fas fa-edit"></i></span>
-                                <span><i class="fas fa-trash-alt text-danger"></i></span>
-                            </td>
-                        </tr>
-                        <tr class="align-middle">
+                                <td>E0985</td>
+                                <td><img src="assets/img/vege.png" height="100px" width="auto" alt="not available"></td>
+                                <td>Earbud</td>
+                                <td>BDT 23,000</td>
+                                <td>5</td>
+                                <td>
+                                    <div>Uttara, sector-01;
+                                        <br>
+                                        Road 01.
+                                        <br>
+                                        Dhaka-1230
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="me-3"><i class="fas fa-edit"></i></span>
+                                    <span><i class="fas fa-trash-alt text-danger"></i></span>
+                                </td>
+                            </tr>
+                            <tr class="align-middle">
 
 
-                            <td>E0985</td>
-                            <td><img src="assets/img/vege.png" height="130px" width="auto" alt="not available"></td>
-                            <td>Earbud</td>
-                            <td>BDT 23,000</td>
-                            <td>5</td>
-                            <td>
-                                <div>Uttara, sector-01;
-                                    <br>
-                                    Road 01.
-                                    <br>
-                                    Dhaka-1230
-                                </div>
-                            </td>
-                            <td>
-                                <span class="me-3"><i class="fas fa-edit"></i></span>
-                                <span><i class="fas fa-trash-alt text-danger"></i></span>
-                            </td>
-                        </tr>
-                        <tr class="align-middle">
+                                <td>E0985</td>
+                                <td><img src="assets/img/vege.png" height="100px" width="auto" alt="not available"></td>
+                                <td>Earbud</td>
+                                <td>BDT 23,000</td>
+                                <td>5</td>
+                                <td>
+                                    <div>Uttara, sector-01;
+                                        <br>
+                                        Road 01.
+                                        <br>
+                                        Dhaka-1230
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="me-3"><i class="fas fa-edit"></i></span>
+                                    <span><i class="fas fa-trash-alt text-danger"></i></span>
+                                </td>
+                            </tr>
+                            <tr class="align-middle">
 
 
-                            <td>E0985</td>
-                            <td><img src="assets/img/vege.png" height="130px" width="auto" alt="not available"></td>
-                            <td>Earbud</td>
-                            <td>BDT 23,000</td>
-                            <td>5</td>
-                            <td>
-                                <div>Uttara, sector-01;
-                                    <br>
-                                    Road 01.
-                                    <br>
-                                    Dhaka-1230
-                                </div>
-                            </td>
-                            <td>
-                                <span class="me-3"><i class="fas fa-edit"></i></span>
-                                <span><i class="fas fa-trash-alt text-danger"></i></span>
-                            </td>
-                        </tr>
-                        <tr class="align-middle">
+                                <td>E0985</td>
+                                <td><img src="assets/img/vege.png" height="100px" width="auto" alt="not available"></td>
+                                <td>Earbud</td>
+                                <td>BDT 23,000</td>
+                                <td>5</td>
+                                <td>
+                                    <div>Uttara, sector-01;
+                                        <br>
+                                        Road 01.
+                                        <br>
+                                        Dhaka-1230
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="me-3"><i class="fas fa-edit"></i></span>
+                                    <span><i class="fas fa-trash-alt text-danger"></i></span>
+                                </td>
+                            </tr>
+                            <tr class="align-middle">
 
 
-                            <td>E0985</td>
-                            <td><img src="assets/img/vege.png" height="130px" width="auto" alt="not available"></td>
-                            <td>Earbud</td>
-                            <td>BDT 23,000</td>
-                            <td>5</td>
-                            <td>
-                                <div>Uttara, sector-01;
-                                    <br>
-                                    Road 01.
-                                    <br>
-                                    Dhaka-1230
-                                </div>
-                            </td>
-                            <td>
-                                <span class="me-3"><i class="fas fa-edit"></i></span>
-                                <span><i class="fas fa-trash-alt text-danger"></i></span>
-                            </td>
-                        </tr>
-                        <tr class="align-middle">
+                                <td>E0985</td>
+                                <td><img src="assets/img/vege.png" height="100px" width="auto" alt="not available"></td>
+                                <td>Earbud</td>
+                                <td>BDT 23,000</td>
+                                <td>5</td>
+                                <td>
+                                    <div>Uttara, sector-01;
+                                        <br>
+                                        Road 01.
+                                        <br>
+                                        Dhaka-1230
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="me-3"><i class="fas fa-edit"></i></span>
+                                    <span><i class="fas fa-trash-alt text-danger"></i></span>
+                                </td>
+                            </tr>
+                            <tr class="align-middle">
 
 
-                            <td>E0985</td>
-                            <td><img src="assets/img/vege.png" height="130px" width="auto" alt="not available"></td>
-                            <td>Earbud</td>
-                            <td>BDT 23,000</td>
-                            <td>5</td>
-                            <td>
-                                <div>Uttara, sector-01;
-                                    <br>
-                                    Road 01.
-                                    <br>
-                                    Dhaka-1230
-                                </div>
-                            </td>
-                            <td>
-                                <span class="me-3"><i class="fas fa-edit"></i></span>
-                                <span><i class="fas fa-trash-alt text-danger"></i></span>
-                            </td>
-                        </tr>
-                        <tr class="align-middle">
+                                <td>E0985</td>
+                                <td><img src="assets/img/vege.png" height="100px" width="auto" alt="not available"></td>
+                                <td>Earbud</td>
+                                <td>BDT 23,000</td>
+                                <td>5</td>
+                                <td>
+                                    <div>Uttara, sector-01;
+                                        <br>
+                                        Road 01.
+                                        <br>
+                                        Dhaka-1230
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="me-3"><i class="fas fa-edit"></i></span>
+                                    <span><i class="fas fa-trash-alt text-danger"></i></span>
+                                </td>
+                            </tr>
+                            <tr class="align-middle">
 
 
-                            <td>E0985</td>
-                            <td><img src="assets/img/vege.png" height="130px" width="auto" alt="not available"></td>
-                            <td>Earbud</td>
-                            <td>BDT 23,000</td>
-                            <td>5</td>
-                            <td>
-                                <div>Uttara, sector-01;
-                                    <br>
-                                    Road 01.
-                                    <br>
-                                    Dhaka-1230
-                                </div>
-                            </td>
-                            <td>
-                                <span class="me-3"><i class="fas fa-edit"></i></span>
-                                <span><i class="fas fa-trash-alt text-danger"></i></span>
-                            </td>
-                        </tr>
-                        <tr class="align-middle">
+                                <td>E0985</td>
+                                <td><img src="assets/img/vege.png" height="100px" width="auto" alt="not available"></td>
+                                <td>Earbud</td>
+                                <td>BDT 23,000</td>
+                                <td>5</td>
+                                <td>
+                                    <div>Uttara, sector-01;
+                                        <br>
+                                        Road 01.
+                                        <br>
+                                        Dhaka-1230
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="me-3"><i class="fas fa-edit"></i></span>
+                                    <span><i class="fas fa-trash-alt text-danger"></i></span>
+                                </td>
+                            </tr>
+                            <tr class="align-middle">
 
 
-                            <td>E0985</td>
-                            <td><img src="assets/img/vege.png" height="130px" width="auto" alt="not available"></td>
-                            <td>Earbud</td>
-                            <td>BDT 23,000</td>
-                            <td>5</td>
-                            <td>
-                                <div>Uttara, sector-01;
-                                    <br>
-                                    Road 01.
-                                    <br>
-                                    Dhaka-1230
-                                </div>
-                            </td>
-                            <td>
-                                <span class="me-3"><i class="fas fa-edit"></i></span>
-                                <span><i class="fas fa-trash-alt text-danger"></i></span>
-                            </td>
-                        </tr>
-                        <tr class="align-middle">
+                                <td>E0985</td>
+                                <td><img src="assets/img/vege.png" height="100px" width="auto" alt="not available"></td>
+                                <td>Earbud</td>
+                                <td>BDT 23,000</td>
+                                <td>5</td>
+                                <td>
+                                    <div>Uttara, sector-01;
+                                        <br>
+                                        Road 01.
+                                        <br>
+                                        Dhaka-1230
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="me-3"><i class="fas fa-edit"></i></span>
+                                    <span><i class="fas fa-trash-alt text-danger"></i></span>
+                                </td>
+                            </tr>
+                            <tr class="align-middle">
 
 
-                            <td>E0985</td>
-                            <td><img src="assets/img/vege.png" height="130px" width="auto" alt="not available"></td>
-                            <td>Earbud</td>
-                            <td>BDT 23,000</td>
-                            <td>5</td>
-                            <td>
-                                <div>Uttara, sector-01;
-                                    <br>
-                                    Road 01.
-                                    <br>
-                                    Dhaka-1230
-                                </div>
-                            </td>
-                            <td>
-                                <span class="me-3"><i class="fas fa-edit"></i></span>
-                                <span><i class="fas fa-trash-alt text-danger"></i></span>
-                            </td>
-                        </tr>
-                        <tr class="align-middle">
+                                <td>E0985</td>
+                                <td><img src="assets/img/vege.png" height="100px" width="auto" alt="not available"></td>
+                                <td>Earbud</td>
+                                <td>BDT 23,000</td>
+                                <td>5</td>
+                                <td>
+                                    <div>Uttara, sector-01;
+                                        <br>
+                                        Road 01.
+                                        <br>
+                                        Dhaka-1230
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="me-3"><i class="fas fa-edit"></i></span>
+                                    <span><i class="fas fa-trash-alt text-danger"></i></span>
+                                </td>
+                            </tr>
+                            <tr class="align-middle">
 
 
-                            <td>E0985</td>
-                            <td><img src="assets/img/vege.png" height="130px" width="auto" alt="not available"></td>
-                            <td>Earbud</td>
-                            <td>BDT 23,000</td>
-                            <td>5</td>
-                            <td>
-                                <div>Uttara, sector-01;
-                                    <br>
-                                    Road 01.
-                                    <br>
-                                    Dhaka-1230
-                                </div>
-                            </td>
-                            <td>
-                                <span class="me-3"><i class="fas fa-edit"></i></span>
-                                <span><i class="fas fa-trash-alt text-danger"></i></span>
-                            </td>
-                        </tr>
-                        <tr class="align-middle">
+                                <td>E0985</td>
+                                <td><img src="assets/img/vege.png" height="100px" width="auto" alt="not available"></td>
+                                <td>Earbud</td>
+                                <td>BDT 23,000</td>
+                                <td>5</td>
+                                <td>
+                                    <div>Uttara, sector-01;
+                                        <br>
+                                        Road 01.
+                                        <br>
+                                        Dhaka-1230
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="me-3"><i class="fas fa-edit"></i></span>
+                                    <span><i class="fas fa-trash-alt text-danger"></i></span>
+                                </td>
+                            </tr>
+                            <tr class="align-middle">
 
 
-                            <td>E0985</td>
-                            <td><img src="assets/img/vege.png" height="130px" width="auto" alt="not available"></td>
-                            <td>Earbud</td>
-                            <td>BDT 23,000</td>
-                            <td>5</td>
-                            <td>
-                                <div>Uttara, sector-01;
-                                    <br>
-                                    Road 01.
-                                    <br>
-                                    Dhaka-1230
-                                </div>
-                            </td>
-                            <td>
-                                <span class="me-3"><i class="fas fa-edit"></i></span>
-                                <span><i class="fas fa-trash-alt text-danger"></i></span>
-                            </td>
-                        </tr>
-                        <tr class="align-middle">
+                                <td>E0985</td>
+                                <td><img src="assets/img/vege.png" height="100px" width="auto" alt="not available"></td>
+                                <td>Earbud</td>
+                                <td>BDT 23,000</td>
+                                <td>5</td>
+                                <td>
+                                    <div>Uttara, sector-01;
+                                        <br>
+                                        Road 01.
+                                        <br>
+                                        Dhaka-1230
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="me-3"><i class="fas fa-edit"></i></span>
+                                    <span><i class="fas fa-trash-alt text-danger"></i></span>
+                                </td>
+                            </tr>
 
-
-                            <td>E0985</td>
-                            <td><img src="assets/img/vege.png" height="130px" width="auto" alt="not available"></td>
-                            <td>Earbud</td>
-                            <td>BDT 23,000</td>
-                            <td>5</td>
-                            <td>
-                                <div>Uttara, sector-01;
-                                    <br>
-                                    Road 01.
-                                    <br>
-                                    Dhaka-1230
-                                </div>
-                            </td>
-                            <td>
-                                <span class="me-3"><i class="fas fa-edit"></i></span>
-                                <span><i class="fas fa-trash-alt text-danger"></i></span>
-                            </td>
-                        </tr>
-
-                    </tbody>
+                        </tbody>
+                    </div>
                 </table>
 
 
-                <!-- </div> -->
+
+
             </div>
         </div>
         <!-- right  part end -->
@@ -695,12 +709,17 @@
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
 
-    <script>
-        // new DataTable('#example');
+    <script>// new DataTable('#example');</script>
 
-    </script>
     <script>
-        let oTable = $('#example').DataTable();   //pay attention to capital D, which is mandatory to retrieve "api" datatables' object, as @Lionel said
+
+        // new DataTable('#example', );
+
+        let oTable = $('#example').DataTable({
+            paging: true,
+            scrollCollapse: true,
+            scrollY: '60vh'
+        });   //pay attention to capital D, which is mandatory to retrieve "api" datatables' object, as @Lionel said
         $('.search-bar1').keyup(function () {
             oTable.search($(this).val()).draw();
         })
@@ -708,16 +727,6 @@
 
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/fontawesome_min.js"></script>
-
-    <script>
-        const mySvg = document.getElementById("mySvg");
-
-        mySvg.addEventListener("click", function () {
-            mySvg.classList.toggle("rotated"); // Toggle the 'rotated' class on click
-        });
-
-    </script>
-
 
     <!-- append filter with icon tag  inside the built in table paragraph-->
     <script>
@@ -728,7 +737,7 @@
         if (example_length) {
             // Create a nexample_lengthew i tag
             var spanTag = document.createElement("span");
-            spanTag.classList = "ms-4 mt-1";
+            spanTag.classList = "ms-2 mt-1";
 
 
             var iTag = document.createElement("i");
@@ -749,6 +758,13 @@
             button.style.border = 'none';
             button.style.height = '50px';
             button.style.width = '150px';
+            // button.style.marginBottom = '10px';
+
+            // button.style.marginRight = '250px!important';
+            // button.style.textAlign = 'left';
+            // button.classList.add('text-center');
+
+
             button.innerText = "Add to Cart";
 
 
@@ -760,7 +776,7 @@
             a_tag.setAttribute('href', "/service.html");
 
             // spanTag3.classList = 'ms-5';
-            spanTag3.style.marginLeft = "1100px";
+            spanTag3.style.marginLeft = "1040px";
             spanTag3.style.paddingLeft = "0px";
 
             a_tag.appendChild(button);
