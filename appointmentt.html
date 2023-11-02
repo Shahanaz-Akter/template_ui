@@ -117,7 +117,7 @@
         th,
         td {
             text-align: center !important;
-            padding: 10px 15px !important;
+            padding: 30px 20px !important;
         }
 
 
@@ -439,29 +439,19 @@
                         </thead>
 
                         <tbody>
+
+
                             <tr class="align-middle">
                                 <td>01</td>
                                 <td>Mimi</td>
-                                <td>12 p.m</td>
-                                <td>12-04-2023</td>
-                                <td>Barisal</td>
+                                <td>12 P.m</td>
+                                <td>02-11-2023</td>
+                                <td>Dhaka</td>
                                 <td>mimi@gmail.com</td>
-                                <td>018***********************</td>
-                                <td>
-                                    <span class="me-3"><i class="fas fa-edit"></i></span>
-                                    <span><i class="fas fa-trash-alt text-danger"></i></span>
-                                </td>
-                            </tr>
+
+                                <td><img src="assets/img/vege.png" height="100px" width="auto" alt="not available"></td>
 
 
-                            <tr class="align-middle">
-                                <td>02</td>
-                                <td>Shahanaz</td>
-                                <td>12 p.m</td>
-                                <td>12-04-2023</td>
-                                <td>Barisal</td>
-                                <td>mimi@gmail.com</td>
-                                <td>018***********************</td>
                                 <td>
                                     <span class="me-3"><i class="fas fa-edit"></i></span>
                                     <span><i class="fas fa-trash-alt text-danger"></i></span>
@@ -469,49 +459,69 @@
                             </tr>
 
                             <tr class="align-middle">
-                                <td>03</td>
-                                <td>Shoily</td>
-                                <td>12 p.m</td>
-                                <td>12-04-2023</td>
-                                <td>Barisal</td>
+                                <td>01</td>
+                                <td>Mimi</td>
+                                <td>12 P.m</td>
+                                <td>02-11-2023</td>
+                                <td>Dhaka</td>
                                 <td>mimi@gmail.com</td>
-                                <td>018***********************</td>
+
+                                <td><img src="assets/img/vege.png" height="100px" width="auto" alt="not available"></td>
+
+
                                 <td>
                                     <span class="me-3"><i class="fas fa-edit"></i></span>
                                     <span><i class="fas fa-trash-alt text-danger"></i></span>
                                 </td>
                             </tr>
-
-
                             <tr class="align-middle">
-                                <td>04</td>
-                                <td>Luna</td>
-                                <td>12 p.m</td>
-                                <td>12-04-2023</td>
-                                <td>Barisal</td>
+                                <td>01</td>
+                                <td>Mimi</td>
+                                <td>12 P.m</td>
+                                <td>02-11-2023</td>
+                                <td>Dhaka</td>
                                 <td>mimi@gmail.com</td>
-                                <td>018***********************</td>
+
+                                <td><img src="assets/img/vege.png" height="100px" width="auto" alt="not available"></td>
+
+
                                 <td>
                                     <span class="me-3"><i class="fas fa-edit"></i></span>
                                     <span><i class="fas fa-trash-alt text-danger"></i></span>
                                 </td>
                             </tr>
-
                             <tr class="align-middle">
-                                <td>03</td>
-                                <td>Shoily</td>
-                                <td>12 p.m</td>
-                                <td>12-04-2023</td>
-                                <td>Barisal</td>
+                                <td>01</td>
+                                <td>Mimi</td>
+                                <td>12 P.m</td>
+                                <td>02-11-2023</td>
+                                <td>Dhaka</td>
                                 <td>mimi@gmail.com</td>
-                                <td>018***********************</td>
+
+                                <td><img src="assets/img/vege.png" height="100px" width="auto" alt="not available"></td>
+
+
                                 <td>
                                     <span class="me-3"><i class="fas fa-edit"></i></span>
                                     <span><i class="fas fa-trash-alt text-danger"></i></span>
                                 </td>
                             </tr>
+                            <tr class="align-middle">
+                                <td>01</td>
+                                <td>Mimi</td>
+                                <td>12 P.m</td>
+                                <td>02-11-2023</td>
+                                <td>Dhaka</td>
+                                <td>mimi@gmail.com</td>
+
+                                <td><img src="assets/img/vege.png" height="100px" width="auto" alt="not available"></td>
 
 
+                                <td>
+                                    <span class="me-3"><i class="fas fa-edit"></i></span>
+                                    <span><i class="fas fa-trash-alt text-danger"></i></span>
+                                </td>
+                            </tr>
                         </tbody>
                     </div>
                 </table>
@@ -530,19 +540,17 @@
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
 
-    <script>
-        // new DataTable('#example');
+    <script>// new DataTable('#example');</script>
 
-    </script>
     <script>
 
-        new DataTable('#example', {
+        // new DataTable('#example', );
+
+        let oTable = $('#example').DataTable({
             paging: true,
             scrollCollapse: true,
             scrollY: '60vh'
-        });
-
-        let oTable = $('#example').DataTable();   //pay attention to capital D, which is mandatory to retrieve "api" datatables' object, as @Lionel said
+        });   //pay attention to capital D, which is mandatory to retrieve "api" datatables' object, as @Lionel said
         $('.search-bar1').keyup(function () {
             oTable.search($(this).val()).draw();
         })
@@ -550,9 +558,6 @@
 
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/fontawesome_min.js"></script>
-
-
-
 
     <!-- append filter with icon tag  inside the built in table paragraph-->
     <script>
@@ -564,7 +569,6 @@
             // Create a nexample_lengthew i tag
             var spanTag = document.createElement("span");
             spanTag.classList = "ms-2 mt-1";
-
 
             var iTag = document.createElement("i");
 
@@ -579,16 +583,16 @@
             let button = document.createElement("button");
             button.style.padding = '7px 20px';
             button.style.background = '#2871FF';
+            // button.style.background = 'black';
+
+
+
             button.style.color = 'white';
             button.style.borderRadius = '10px';
             button.style.border = 'none';
             button.style.height = '50px';
             button.style.width = '150px';
-            // button.style.marginBottom = '10px';
 
-            // button.style.marginRight = '250px!important';
-            // button.style.textAlign = 'left';
-            // button.classList.add('text-center');
 
 
             button.innerText = "Add to Cart";
@@ -599,10 +603,11 @@
             //     </a>
 
             let a_tag = document.createElement("a");
-            a_tag.setAttribute('href', "/service.html");
+            a_tag.setAttribute('href', "Service.html");
 
+            console.log(a_tag);
             // spanTag3.classList = 'ms-5';
-            spanTag3.style.marginLeft = "1050px";
+            spanTag3.style.marginLeft = "1040px";
             spanTag3.style.paddingLeft = "0px";
 
             a_tag.appendChild(button);
