@@ -1,0 +1,1124 @@
+<!doctype html>
+<html lang="zxx">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap Min CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!-- Responsive CSS -->
+    <!-- <link rel="stylesheet" href="assets/css/responsive.css"> -->
+    <link rel="stylesheet" href="assets/css/custom_select2.css">
+
+    <!-- fontawewsome ate version link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- select2 css link -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/css/multi-select-tag.css">
+
+
+
+
+    <style id="omarInventory">
+        #productInformation div h3,
+        #ProductVariant div h3,
+        .newVariantTable div h3,
+        #table_content_container div h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .s-i-c-2 label {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90px;
+            width: 90px;
+            background-color: rgb(195, 212, 223);
+        }
+
+        .s-i-c-2 label i {
+            color: white;
+            font-size: 50px;
+        }
+
+        .form-control {
+            color: #242945;
+            background-color: #EBEBEB;
+            border-radius: 5px;
+            font-size: 14px;
+            padding: 0 8px 5px 8px;
+            width: 100%;
+            -webkit-transition: all ease 0.5s;
+            transition: all ease 0.5s;
+            margin-top: 7px
+        }
+
+        .colorVariantBox .colorInputUL {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 5px 5px;
+            margin: 10px 0;
+            border-radius: 5px;
+            background-color: #EBEBEB;
+        }
+
+        .colorVariantBox .colorInputUL input {
+            flex: 1;
+            padding: 5px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            background-color: #EBEBEB;
+        }
+
+        .colorVariantBox .colorInputUL li {
+            color: #333;
+            margin: 2px 2px;
+            list-style: none;
+            border-radius: 5px;
+            background: white;
+            padding: 2px 5px 2px 5px;
+            border: 1px solid #e3e1e1;
+        }
+
+        .colorVariantBox .colorInputUL li i {
+            color: #407BFF;
+            font-size: 12px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .populateBtn span {
+            background-color: #8723c14d;
+            /* color: #8723c1; */
+            color: #8723c1d8;
+
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .populateBtn span:hover {
+            background-color: #8723c1;
+            color: #fff;
+            padding: 10px 15px;
+        }
+
+        .newVariantTable p {
+            font-size: 16px;
+            font-family: "Gill Sans", sans-serif;
+        }
+
+        .tableHead {
+            background-color: #3D3D3D;
+            color: white;
+            text-align: center
+        }
+
+        .tableHead tr th {
+            box-sizing: border-box;
+            box-shadow: 0 1px 1px 1px white;
+        }
+
+        .tableBody {
+            text-align: center;
+            background-color: white;
+            color: #3D3D3D;
+            font-weight: 700;
+        }
+
+        .tableBody td {
+            padding: 20px 0;
+            box-sizing: border-box;
+            box-shadow: 0 -1px 1px 1px #c7c7c7
+        }
+
+        .tableBody td .myInput {
+            color: #3D3D3D;
+            font-weight: 700;
+            text-align: center;
+            border: none;
+            outline: none;
+            width: 95%;
+        }
+
+        #table_content_container label {
+            font-weight: 700;
+        }
+
+        .table_content-Add span {
+            font-size: 20px;
+            font-weight: 700;
+            color: rgb(14, 168, 14);
+        }
+
+        .table_content-delete .delete-content-icon,
+        .table_content-Add .add-content-icon {
+            background-color: white;
+        }
+
+        .table_content-Add .add-content-icon:hover {
+            background-color: rgba(148, 245, 148, 0.301);
+        }
+
+        .table_content-delete .delete-content-icon:hover {
+            background-color: rgba(238, 82, 82, 0.356)
+        }
+
+        .productName input:focus {
+            background-color: #EBEBEB;
+        }
+
+        /* .category .form-control-product, .productName .form-control-product, .Description .form-control-product {
+
+   color: #242945;
+   background-color: #EBEBEB;
+   border-radius: 5px;
+   font-size: 14px;
+   padding: 8px 15px;
+   width: 100%;
+   -webkit-transition: all ease 0.5s;
+   transition: all ease 0.5s;
+ } */
+    </style>
+    <style>
+        /* .tableHead {
+            background-color: #0071bc;
+            color: white;
+            text-align: center
+        } */
+
+        /* .tableBody {
+            border-bottom: 1px solid #8723c1;
+            text-align: center
+        } */
+
+        /* .tableBody td {
+            padding: 20px 0;
+            border: 1px solid black;
+        } */
+
+        /* .myInput {
+            text-align: center;
+            border: none;
+            outline: none;
+            width: 100%;
+        } */
+
+        .myInput:focus {
+            border: none;
+            /* border-bottom: 0.3px solid red !important; */
+        }
+
+        .image_2nd_upload_label::after {
+            top: 17px !important;
+        }
+
+        .select2-selection--multiple {
+            padding-top: 8px !important;
+            min-height: 50px !important;
+        }
+    </style>
+</head>
+
+<body class="body-bg-f5f5f5">
+
+
+
+
+
+
+    <div style="background-color: white; margin: 20px 12px;">
+        <!-- page Title  -->
+        <div class="page-title-area">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-sm-6">
+                        <div class="page-title">
+                            <h3>Add Product</h3>
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-lg-6 col-sm-6 text-end">
+                            <span class="btn btn-primary" onclick="make_duplicate_product('single_product','product_form')">Make
+                                Duplicate</span>
+                        </div>  -->
+                </div>
+            </div>
+        </div>
+        <!-- Add a single product  -->
+        <form action="" method="post" enctype="" id="product_form">
+            <!-- @csrf -->
+            <div id="single_product">
+                <!-- @csrf  -->
+                <!-- Product Information  -->
+                <div id="productInformation" class="" style="background-color: #D9D9D9; border-radius: 10px; box-shadow: 0 0 20px 3px rgba(0,0,0,0.05); margin: 20px; padding:20px">
+                    <div class="d-flex justify-content-between ">
+                        <h3>Product Information</h3>
+                        <span class="btn btn-primary" onclick="make_duplicate_product('single_product','product_form')">Make
+                            Duplicate</span>
+                    </div>
+                    <div class="row gap-3 mt-3">
+                        <p>* All Image size should be 200/200.</p>
+                        <div class="col-md-6 col-lg-6 col-sm-12 ">
+
+                            <div class="row h-80">
+                                <div class="col-md-3 col-sm-12">
+
+                                    <div class="main-img-container" style="display: flex; align-items:center;flex-direction:column;justify-content:center;">
+
+                                        <img class="" src="https://img.freepik.com/free-vector/realistic-fitness-trackers_23-2148530529.jpg?w=740&t=st=1699167611~exp=1699168211~hmac=b48bdb1768728848ab8d7d22e8411e75881303bf7ad107b05078cbbf81ed8436" alt="" style="width:200px;border-radius:5px;"
+                                            id="main-img-preview">
+                                        <label for="mainImg" class="btn btn-primary mt-3">Set Primary
+                                            Image</label>
+                                        <input type="file" for="mainImg" class="d-none" id="mainImg" onchange="main_image_changed(this,null)" name="primary_image">
+                                    </div>
+                                </div>
+                                <div class="col-md-9 col-sm-12" id="secondary_img_container_parent" style="border:2px solid #C9D2D7; padding:10px; max-height:300px; overflow-y:auto;">
+                                    <div class="secondary-img-container" id="secondary-img-container">
+
+                                    </div>
+                                    <div class="s-i-c-2">
+
+                                        <label for="secondaryImg" class="btn btn-primary"><i class="fa-solid fa-plus"></i></label>
+                                        <input type="file" for="secondaryImg" class="d-none" id="secondaryImg" onchange="secondary_image_changed(this,null)" multiple>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-sm-12 row ">
+                            <div class="col-md-6" style="margin-bottom: 10px;">
+                                <div class="form-group" style="background-color: white; border-radius: 5px; padding:10px">
+                                    <label>Product Name</label>
+                                    <input type="text" class="form-control" placeholder="Null" name="product_name" onkeypress="return event.keyCode != 13;">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6" style="margin-bottom: 10px;">
+                                <div class="form-group  position-relative" style="background-color: white; border-radius: 5px; padding:10px">
+                                    <label class="" style=" ">Product
+                                        Category</label>
+                                    <div class=" position-relative single-contact-info productName" style="margin-top: 7px">
+                                        <input type="text" class="form-control " placeholder="Null" onclick="showContentDropdown(1000, null)" autocomplete="off" id="contentsTitleInput_1000" name="product_category" onkeypress="return event.keyCode != 13;">
+                                        <div class="content_dropdown-menu d-none w-100 border-0 dropdownMenu_ dropdownBox" id="dropdownMenu_1000" style="margin-left: 0px;box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);border:1px solid gray;">
+                                            <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Category 1</div>
+                                            <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Category 2</div>
+                                            <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Category 3</div>
+                                            <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Category 4</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6" style="margin-bottom: 10px;">
+                                <div class="form-group " style="background-color: white; border-radius: 5px; padding:10px">
+                                    <label>Buying Price</label>
+                                    <input type="number" class="form-control" placeholder="Null" name="buying_price" onkeypress="return event.keyCode != 13;">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6" style="margin-bottom: 10px;">
+                                <div class="form-group " style="background-color: white; border-radius: 5px; padding:10px">
+                                    <label>Selling Price</label>
+                                    <input type="number" class="form-control" placeholder="Null" name="selling_price" onkeypress="return event.keyCode != 13;">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6" style="margin-bottom: 10px;">
+                                <div class="form-group " style="background-color: white; border-radius: 5px; padding:10px">
+                                    <label>Discount</label>
+                                    <input type="number" class="form-control" placeholder="Null" name="discount" onkeypress="return event.keyCode != 13;">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6" style="margin-bottom: 10px;">
+                                <div class="form-group " style="background-color: white; border-radius: 5px; padding:10px">
+                                    <label for="DiscountExpireDate">Discount Expire Date</label>
+                                    <input type="date" class="form-control" id="DiscountExpireDate" placeholder="Null" name="discount_expire_date" min="2023-10-22" onkeypress="return event.keyCode != 13;">
+                                    <!-- <label>Date</label>
+                                        <input type="date" class="form-control" placeholder="Null" name="product_name" onkeypress="return event.keyCode != 13;">  -->
+                                    <script>
+                                        const currentDate = new Date();
+
+                                        const minDate = currentDate.toISOString().slice(0, 10);
+
+                                        document.getElementById("DiscountExpireDate").setAttribute("min", minDate);
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Variant input box  -->
+                <div id="ProductVariant" style="background-color: #D9D9D9; border-radius: 10px; box-shadow: 0 0 20px 3px rgba(0,0,0,0.05); margin: 20px; padding:20px">
+                    <div class="d-flex justify-content-between ">
+                        <h3>Product Variant</h3>
+                    </div>
+
+                    <div class="row " id="varient_container_">
+
+                        <div class="col-lg-4 col-md-4 col-sm-12 colorVariantBox mt-3">
+                            <div style="background-color:white; border-radius:5px; padding:10px;">
+                                <label class="varient_label inline-block d-flex justify-content-between align-items-center" for="colorVariant">Color <span onclick="this.parentNode.parentNode.parentNode.remove()"><i class="fa-solid fa-circle-xmark"
+                                            style="font-size:20px;color:skyblue;border:1px solid skyblue;border-radius:50%;cursor:pointer;"></i></span></label>
+                                <div class="position-relative">
+                                    <ul class="colorInputUL" id="colorInputUL" style=" margin-bottom: 0px;" onclick="showColorDropDown(this)"><input type="text" name="colorVariants" spellcheck="false" id="variantColor" placeholder="Write here for tag" onkeypress="return event.keyCode != 13;">
+                                    </ul>
+                                    <div class="dropdownBox d-none" id="colorDropdownBox" style="height: 200px; overflow-y: auto;">
+                                        <ul>
+                                            <li onclick="getValueFronDropDown(this)">Red</li>
+                                            <li onclick="getValueFronDropDown(this)">Blue</li>
+                                            <li onclick="getValueFronDropDown(this)">Black</li>
+                                            <li onclick="getValueFronDropDown(this)">Pink</li>
+                                            <li onclick="getValueFronDropDown(this)">Yellow</li>
+                                            <li onclick="getValueFronDropDown(this)">White</li>
+                                            <li onclick="getValueFronDropDown(this)">Brown</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-sm-12 colorVariantBox mt-3">
+                            <div style="background-color:white; border-radius:5px; padding:10px;">
+                                <label class="varient_label inline-block d-flex justify-content-between align-items-center" for="sizeVariant">Size
+                                    <span onclick="this.parentNode.parentNode.parentNode.remove()"><i class="fa-solid fa-circle-xmark" style="font-size:20px;color:skyblue;border:1px solid skyblue;border-radius:50%;cursor:pointer;"></i></span>
+                                </label>
+                                <div class="position-relative">
+                                    <ul class="colorInputUL" id="sizeInputUL" style="margin-bottom: 0px;" onclick="showColorDropDown(this)"><input type="text" name="sizeVariants" spellcheck="false" id="sizeVariant" placeholder="Write here for tag" onkeypress="return event.keyCode != 13;">
+                                    </ul>
+                                    <div class="dropdownBox d-none" id="sizedropdownBox" style="height: 200px; overflow-y: auto;">
+                                        <ul>
+                                            <li onclick="getValueFronDropDown(this)">SM</li>
+                                            <li onclick="getValueFronDropDown(this)">LG</li>
+                                            <li onclick="getValueFronDropDown(this)">MD</li>
+                                            <li onclick="getValueFronDropDown(this)">XL</li>
+                                            <li onclick="getValueFronDropDown(this)">XXL</li>
+                                            <li onclick="getValueFronDropDown(this)">35</li>
+                                            <li onclick="getValueFronDropDown(this)">36</li>
+                                            <li onclick="getValueFronDropDown(this)">38</li>
+                                            <li onclick="getValueFronDropDown(this)">40</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-md-flex d-xl-flex d-sm-flex text-center justify-content-between align-items-center" style="margin-top:20px">
+                        <span class="addVarientSpan" style="background-color:#2871FF;padding:8px 20px;border-radius:5px;color:white;cursor:pointer;" data-bs-toggle="modal" data-bs-target="#addVarientModal">Add Varient</span>
+                        <div class="populateBtn delete-table-data mt-4 mt-sm-0" style="">
+                            <span onclick="mula(this, null)" class="text-white">Populate variant table</span>
+                        </div>
+                    </div>
+
+                    <!-- add Varient Label modal code  -->
+                    <div class="modal fade" id="addVarientModal" tabindex="-1" aria-labelledby="addVarientLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="addVarientLabel">Add Varient</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body" style="padding: 100px;">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label>Varient Name</label>
+                                                <input type="text" class="form-control" id="modal_varient_name" style="padding: 10px 20px;">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 pt-5 colorVariantBox">
+                                            <label class="varient_label" for="creaateVariant">Varient Attributes</label>
+                                            <div class="position-relative">
+                                                <ul class="colorInputUL" id="addNewVarient" style=" margin-bottom: 0px;" onclick="showVarientBox(this)"><input type="text" name="colorVariants" spellcheck="false" id="makeVariant" placeholder="Write here for tag"
+                                                        onkeypress="return event.keyCode != 13;"></ul>
+                                                <div>
+                                                    <ul>
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" onclick="save_varient(this, null)">Save
+                                        Varient</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- Product Variant Table box  -->
+                <div class="newVariantTable" style="background-color: #D9D9D9; border-radius: 10px; box-shadow: 0 0 20px 3px rgba(0,0,0,0.05); margin: 20px; padding:20px">
+                    <div class="d-flex justify-content-between ">
+                        <h3>Product Variant</h3>
+                    </div>
+                    <p>Please Provide all information correctly to manage your products with
+                        our inventory service.
+                    </p>
+                    <div class="table-responsive h-auto" data-simplebar>
+                        <table style="table-layout: fixed;width:100%;">
+                            <thead class="tableHead" id="tableHead" style="">
+                                <tr style="height: 60px;" id="tableHeadTr">
+                                    <th class="varient_table_label" style="border-top-left-radius: 10px">Color</th>
+                                    <th class="varient_table_label">Size</th>
+                                    <th class="varient_table_label">Variant</th>
+                                    <th>Qunatity</th>
+                                    <th style="border-top-right-radius: 10px">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="product_table table-bordered">
+                                <tr class="text-center align-middle">
+                                    <td>Red</td>
+                                    <td>XL</td>
+
+                                    <td>sss</td>
+                                    <td>40</td>
+                                    <td>
+                                        <span class="me-3">
+                                            <i class="fas fa-edit text-primary"></i>
+
+                                        </span>
+                                        <span>
+                                            <i class="fas fa-trash-alt text-danger"></i>
+
+                                        </span>
+
+                                    </td>
+
+                                </tr>
+
+                                <tr class="text-center align-middle">
+
+                                    <td>Red</td>
+                                    <td>XL</td>
+
+                                    <td>sss</td>
+                                    <td>40</td>
+                                    <td>
+                                        <span class="me-3">
+                                            <i class="fas fa-edit text-primary"></i>
+
+                                        </span>
+                                        <span>
+                                            <i class="fas fa-trash-alt text-danger"></i>
+
+                                        </span>
+
+                                    </td>
+
+                                </tr>
+                                <tr class="text-center align-middle">
+
+                                    <td>Red</td>
+                                    <td>XL</td>
+
+                                    <td>sss</td>
+                                    <td>40</td>
+                                    <td>
+                                        <span class="me-3">
+                                            <i class="fas fa-edit text-primary"></i>
+
+                                        </span>
+                                        <span>
+                                            <i class="fas fa-trash-alt text-danger"></i>
+
+                                        </span>
+
+                                    </td>
+
+                                </tr>
+                            </tbody>
+
+                            <tfoot>
+
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                <!-- table content container box code  -->
+                <div id="table_content_container" class="newVariantTable TableOfContents" style="background-color: #D9D9D9; border-radius: 10px; box-shadow: 0 0 20px 3px rgba(0,0,0,0.05); margin: 20px; padding:20px">
+                    <div class="d-flex justify-content-between ">
+                        <h3>Table of contents for your product</h3>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6 col-xl-6 col-sm-12 ro">
+                            <div class="form-group" style="background-color: white; border-radius: 5px; padding:20px">
+                                <label>Product Description</label>
+                                <textarea name="product_description" class="form-control" cols="40" rows="7"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-6 col-sm-12 mt-sm-3 mt-md-0 mt-3">
+                            <div class="form-group" style="background-color: white; border-radius :5px; padding:20px">
+                                <label>Additional Information</label>
+                                <textarea name="product_additional_information" class="form-control" cols="40" rows="7"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- content dropdown hight box  -->
+                    <div class="d-none row mt-4" id="table_content_dropdown_">
+                        <div class=" col-lg-5 com-md-5 col-sm-12 mt-sm-3 mt-3 position-relative  productName">
+                            <div class="form-group" style="background-color: white; border-radius:5px; padding:20px;">
+                                <label style="margin-bottom: 0px;">Attribute Title</label>
+                                <div class=" position-relative  productName ">
+                                    <input type="text" class="form-control form-control-product border-0" placeholder="Title" onclick="showContentDropdown(1, null)" autocomplete="off" id="contentsTitleInput_" style="padding: 5px 5px 8px 5px; font-size: 16px;" name="attributes_title[]">
+                                    <div class="content_dropdown-menu d-none w-100 border-0 dropdownMenu_ dropdownBox" id="dropdownMenu_" style="margin-left: 0px;box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);border:1px solid gray; height:200px;overflow-y:auto">
+                                        <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Brand</div>
+                                        <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Product Type</div>
+                                        <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Fabric</div>
+                                        <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Apparel Type</div>
+                                        <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Gender</div>
+                                        <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Style</div>
+                                        <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Model</div>
+                                        <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Size measurement
+                                        </div>
+                                        <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Colour</div>
+
+                                        <!-- Add more options as needed -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5 com-md-5 col-sm-10 mt-sm-3 mt-3 single-contact-info productName">
+                            <div class="form-group" style="background-color: white; border-radius:5px; padding:20px;">
+                                <label>Product Value</label>
+                                <input type="text" class="form-control" style="padding: 5px 5px 8px 5px; font-size: 16px;border: none;" name="attribute_value[]">
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-2 com-md-2 col-sm-2 mt-sm-3 mt-3 table_content-delete d-flex align-items-center">
+                            <div class="delete-content-icon" style="border-radius:5px; padding:10px 20px;" onclick="deleteTableContent(this, null)">
+                                <span style="color: red">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- content dropdown show box  -->
+                    <div id="table_content_dropdown_box">
+                        <div class="row mt-4" id="table_content_dropdown_0">
+                            <div class=" col-md-5 col-lg-5 col-sm-12 mt-sm-3 position-relative  productName">
+                                <div class="form-group" style="background-color: white; border-radius:5px; padding:20px;">
+                                    <label>Attribute Title</label>
+                                    <div class=" position-relative productName">
+                                        <input type="text" class="form-control form-control-product border-0 " placeholder="Title" onclick="showContentDropdown(0, null)" autocomplete="off" id="contentsTitleInput_0" name="attributes_title[]" style="padding: 5px 5px 8px 5px; font-size: 16px;">
+                                        <div class="content_dropdown-menu border-0 d-none w-100 dropdownMenu_ dropdownBox" id="dropdownMenu_0" style="margin-left: 0px; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);border:1px solid gray; height:200px;overflow-y:auto">
+                                            <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Brand</div>
+                                            <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Product Type</div>
+                                            <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Fabric</div>
+                                            <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Apparel Type</div>
+                                            <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Gender</div>
+                                            <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Style</div>
+                                            <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Model</div>
+                                            <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Size measurement
+                                            </div>
+                                            <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Colour</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-5 col-lg-5 col-sm-10 mt-sm-3 mt-3 productName">
+                                <div class="form-group" style="background-color: white; border-radius:5px; padding:20px;">
+                                    <label>Product Value</label>
+                                    <input type="text" class="form-control" style="padding: 5px 5px 8px 5px; font-size: 16px;border: none;" name="attribute_value[]">
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-2 col-lg-2 col-sm-2 mt-sm-3 mt-3 table_content-Add d-flex align-items-center">
+                                <div class="add-content-icon" style="border-radius:5px; padding:10px 20px;" onclick="table_content_dropdown_add(this, null)">
+                                    <span><i class="fa-solid fa-plus"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- update and cancel button design  -->
+                <div style="display: flex; justify-content: center; align-items:center; padding:4em">
+                    <button type="submit" class="btn btn-primary me-3 border-0" style="background-color:#2871FF; padding: 10px 3em; font-weight: 600;">
+                        Upload
+                    </button>
+
+                    <button class="btn btn-primary border-0" style="background-color: #6F7D87; padding: 10px 3em; font-weight: 600;">
+                        Cancel
+                    </button>
+                </div>
+
+
+            </div>
+        </form>
+
+    </div>
+
+
+
+
+    <!-- Start Go Top Area -->
+    <div class="go-top">
+        <i class="ri-arrow-up-s-fill"></i>
+        <i class="ri-arrow-up-s-fill"></i>
+    </div>
+    <!-- End Go Top Area -->
+
+    <script>
+        let productCount = 0;
+        const make_duplicate_product = (copy_block, parent_block) => {
+            productCount = productCount + 1;
+            // let copy_product = tag.parentNode.parentNode.parentNode.cloneNode(true);
+            console.log("document.getElementById(copy_block)====", copy_block);
+            let aProduct = document.getElementById(copy_block);
+            let copy_product = '';
+            if (aProduct) {
+                copy_product = aProduct.cloneNode(true);
+            } else {
+                copy_product = copy_block.cloneNode(true)
+            }
+            copy_product.style.borderTop = '1px solid tomato';
+
+
+            // Main input clear function 
+            let colorInputUL = document.querySelectorAll(".colorInputUL");
+            for (let i = 0; i < colorInputUL.length; i++) {
+                if (colorInputUL[i].querySelectorAll('li')) {
+                    colorInputUL[i].querySelectorAll('li').forEach(li => {
+                        li.remove();
+                    });
+                }
+            }
+
+            // Duplicate input clear function 
+            let colorInputUL_2 = copy_product.querySelectorAll('.colorInputUL');
+            for (let i = 0; i < colorInputUL_2.length; i++) {
+                if (colorInputUL_2[i].querySelectorAll('li')) {
+                    colorInputUL_2[i].querySelectorAll('li').forEach(li => {
+                        li.remove();
+                    });
+                }
+            }
+
+
+            // Main dropdownBox ul disable style remove function 
+            let allDropdownBox = document.querySelectorAll('.dropdownBox ul');
+            for (let i = 0; i < allDropdownBox.length; i++) {
+                if (allDropdownBox[i].querySelectorAll('li')) {
+                    allDropdownBox[i].querySelectorAll('li').forEach(li => {
+                        if (li.hasAttribute('style')) {
+                            li.removeAttribute('style');
+                        }
+                    });
+                }
+            }
+            // Duplicate dropdownBox ul disable style remove function 
+            let allDropdownBox_2 = copy_product.querySelectorAll('.dropdownBox ul');
+            for (let i = 0; i < allDropdownBox_2.length; i++) {
+                if (allDropdownBox_2[i].querySelectorAll('li')) {
+                    allDropdownBox_2[i].querySelectorAll('li').forEach(li => {
+                        if (li.hasAttribute('style')) {
+                            li.removeAttribute('style');
+                        }
+                    });
+                }
+            }
+
+            // Empty duplicate table body function
+            // let newProduct_table = copy_product.querySelector(`table`)
+            // console.log("newProduct_table", `#product_table_${productCount}`, newProduct_table.children[1]);
+            // if (newProduct_table.children[1].children) {
+            //     console.log("children heee");
+            //     newProduct_table.children[1].innerText = "";
+            // }
+
+
+            copy_product.setAttribute("class", 'pt-5');
+
+
+
+            var innerIDs = [];
+
+            function collectInnerIDs(element) {
+
+
+                if (element.id) {
+                    let value = productCount - 1;
+                    element.id = element.id + "_" + productCount;
+                }
+                if (element.hasAttribute("onchange")) {
+                    let onchangeIS = element.getAttribute("onchange");
+                    var onchangeParts = onchangeIS.split('this');
+                    element.setAttribute("onchange", onchangeParts[0] + 'this, ' + productCount + ')');
+                }
+                if (element.hasAttribute("for")) {
+                    let prev = element.getAttribute("for");
+                    let newe = prev + '_' + productCount;
+                    element.setAttribute("for", newe);
+
+                }
+                if (element.hasAttribute("onclick")) {
+                    let onchangeIS = element.getAttribute("onclick");
+                    var onclickParts = onchangeIS.split(',' || ' ');
+                    if (onclickParts[0] == "save_varient(this" || onclickParts[0] == "mula(this" || onclickParts[0] == "selectOption(this" || onclickParts[0] == "showContentDropdown(0" || onclickParts[0] == "showContentDropdown(1" || onclickParts[0] == "showContentDropdown(1000" || onclickParts[0] == "table_content_dropdown_add(this" || onclickParts[0] == "deleteTableContent(this" || onclickParts[0] == "dynamicDropdown(this") {
+                        element.setAttribute("onclick", onclickParts[0] + ', ' + productCount + ')');
+                    }
+                }
+
+                for (var i = 0; i < element.children.length; i++) {
+                    collectInnerIDs(element.children[i]);
+                }
+            }
+
+            collectInnerIDs(copy_product);
+
+            // remove Table of contents for your product
+            let table_content_dropdown_box_2 = copy_product.querySelector(`#table_content_dropdown_box_${productCount}`);
+            console.log('table_content_dropdown_box_2.children[0]', `#table_content_dropdown_box_${productCount}`, table_content_dropdown_box_2);
+            const first_table_content_dropdown = table_content_dropdown_box_2.children[0];
+
+            table_content_dropdown_box_2.innerText = '';
+            table_content_dropdown_box_2.append(first_table_content_dropdown)
+
+
+
+
+
+
+
+
+            let parent = document.getElementById(parent_block);
+            parent.append(copy_product);
+            let varient_container = document.getElementById(`varient_container__${productCount}`).parentNode.children[2]
+            let newVarientBtn = varient_container.querySelector(".addVarientSpan")
+            newVarientBtn.setAttribute("data-bs-target", `#addVarientModal_${productCount}`);
+        }
+    </script>
+
+
+    <!-- Jquery Min JS -->
+    <!-- <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> -->
+    <script src="assets/js/jquery.min.js"></script>
+    <!-- Bootstrap Bundle Min JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- select2 js file -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script id="select2_script">
+        // let forColorVariant;
+        // let forSizeVariant;
+        // const dynamicDropdown = (tag, num) =>{
+        //     if (num) {
+        //         let addProduct1Color = tag.previousSibling.id;
+        //         forColorVariant = addProduct1Color;
+        //         console.log('addProduct1', addProduct1Color);
+        //     }
+        //     else{
+        //         let addProduct1Color = tag.previousSibling.id;
+        //         forColorVariant = addProduct1Color;
+        //     }
+        //     // let parent = tag.parentNode
+        //     console.log("tag is = ", parent, tag, num);
+        // }
+        // console.log("forColorVariant", forColorVariant);
+        // let addProduct1 = document.getElementById('addProduct1');
+        // let addProduct1Color = addProduct1.lastChild.previousSibling;
+        // if ( !addProduct1Color.hasAttribute("onclick")) {
+        // addProduct1Color.setAttribute("onclick", "dynamicDropdown(this, null)")
+
+        // }
+        // console.log('addProduct1', addProduct1, addProduct1Color);
+
+
+
+
+        // const dynamicDropdown = (tag, num) =>{
+        //     console.log("tag is the =", tag);
+        //     let forColorVariant;
+        //     let forSizeVariant;
+
+        //     if (num) {
+        //         let addProduct1Color = tag.id;
+        //         forColorVariant = addProduct1Color;
+        //         console.log('id is here 1', addProduct1Color);
+        //     }
+        //     else{
+        //         let addProduct1Color = tag.id;
+        //         forColorVariant = addProduct1Color;
+        //         console.log('id is here 2', addProduct1Color);
+        //     }
+        //     console.log('forColorVariant',forColorVariant);
+        // }
+
+        $(document).ready(function () {
+            // Target the select element with its ID "color_variant"
+            var selectElement = $(`#color_variant`);
+            // Set the desired padding value (e.g., 10 pixels)
+            var paddingValue = "10px";
+            // Set the padding using jQuery's css() method
+            selectElement.css("padding", paddingValue);
+        });
+
+        $(`#color_variant`).select2({
+            tags: true,
+            tokenSeparators: [',', ' '],
+            dropdownParent: $('#addProduct1'),
+            placeholder: "Select Product Color",
+            allowClear: true
+        });
+        $("#size_variant").select2({
+            tags: true,
+            tokenSeparators: [',', ' '],
+            dropdownParent: $('#addProduct2'),
+            placeholder: "Select Product Size",
+            allowClear: true
+        });
+
+        $("#custom_variant").select2({
+            tags: true,
+            tokenSeparators: [',', ' '],
+            dropdownParent: $('#addProduct3'),
+            placeholder: "Select Product Attributes",
+            allowClear: true
+        });
+        // $(".my-select2").select2({
+        //     tags: true,
+        //     tokenSeparators: [',', ' '],
+        //     dropdownParent: $('.addProduct___'),
+        //     placeholder: "Select Product Attributes",
+        //     allowClear: true
+        // });
+
+
+        // dynamicDropdown(addProduct1Color, null)
+    </script>
+    <script>
+        //     const dynamicDropdown = (tag, num) =>{
+        //         let forColorVariant;
+        //         let forSizeVariant;
+        //         if (num) {
+        //             let addProduct1Color = tag.previousSibling.id;
+        //             forColorVariant = addProduct1Color;
+        //             console.log('addProduct1', addProduct1Color);
+        //         }
+        //         else
+        //             break
+        //             // let addProduct1Color = tag.previousSibling.id;
+        //             // forColorVariant = addProduct1Color;
+        //         // }
+        //         // let parent = tag.parentNode
+        //         console.log("tag is = ", tag, num);
+
+        //     console.log("forColorVariant", forColorVariant);
+
+        //     $(document).ready(function() {
+        //         // Target the select element with its ID "color_variant"
+        //         var selectElement = $(`#${forColorVariant}`);
+        //         // Set the desired padding value (e.g., 10 pixels)
+        //         var paddingValue = "10px";
+        //         // Set the padding using jQuery's css() method
+        //         selectElement.css("padding", paddingValue);
+        //     });
+
+        //     $(`#${forColorVariant}`).select2({
+        //         tags: true,
+        //         tokenSeparators: [',', ' '],
+        //         dropdownParent: $('#addProduct1'),
+        //         placeholder: "Select Product Color",
+        //         allowClear: true
+        //     });
+        //     $("#size_variant").select2({
+        //         tags: true,
+        //         tokenSeparators: [',', ' '],
+        //         dropdownParent: $('#addProduct2'),
+        //         placeholder: "Select Product Size",
+        //         allowClear: true
+        //     });
+
+        //     $("#custom_variant").select2({
+        //         tags: true,
+        //         tokenSeparators: [',', ' '],
+        //         dropdownParent: $('#addProduct3'),
+        //         placeholder: "Select Product Attributes",
+        //         allowClear: true
+        //     });
+        //     // $(".my-select2").select2({
+        //     //     tags: true,
+        //     //     tokenSeparators: [',', ' '],
+        //     //     dropdownParent: $('.addProduct___'),
+        //     //     placeholder: "Select Product Attributes",
+        //     //     allowClear: true
+        //     // });
+        // }
+    </script>
+
+    <script>
+        let ulTag;
+        let input;
+        let dropdownBox;
+        let varientRemove = 0;
+
+        let tags = [];
+        let colorTags = [];
+        let SizeTags = [];
+
+        let oldColorDropdown = '';
+        let dropdownOldTag = ''
+        const showColorDropDown = (tag) => {
+            dropdownBox = tag.parentNode.children[1];
+            ulTag = tag;
+            if (oldColorDropdown && !oldColorDropdown.classList.contains('d-none') && dropdownOldTag != tag) {
+                console.log("inside the if conditon ", oldColorDropdown, !oldColorDropdown.classList.contains('d-none'));
+                oldColorDropdown.classList.add('d-none');
+            }
+
+            input = tag.querySelector("input");
+            dropdownBox.classList.toggle("d-none");
+            dropdownOldTag = tag;
+            oldColorDropdown = dropdownBox;
+        }
+        const showVarientBox = (tag) => {
+            ulTag = tag;
+            console.log("remove tag from show varient");
+            varientRemove = 1;
+            input = tag.querySelector("input");
+        }
+
+
+        const getValueFronDropDown = (tag) => {
+            ulTag = tag.parentNode.parentNode.parentNode.children[0];
+            let value = tag.innerText;
+            let li = ulTag.children.length
+            tags = [];
+            if (ulTag.children.length > 1) {
+                ulTag.querySelectorAll("li").forEach(li => {
+                    tags.push(li.innerText)
+                });
+            }
+            tags.push(value);
+            createTag(ulTag);
+            tag.style.backgroundColor = "#f0f0f0"
+            tag.style.color = "#888"
+            tag.style.cursor = "not-allowed";
+            tag.style.pointerEvents = "none"
+            dropdownBox.classList.add("d-none");
+        }
+
+
+
+        function createTag(ulTag) {
+            ulTag.querySelectorAll("li").forEach(li => li.remove());
+            tags.slice().reverse().forEach(tag => {
+                let liTag = `<li>${tag} <i class="fa-solid fa-xmark" onclick="remove(this, '${tag}')"></i></li>`;
+                ulTag.insertAdjacentHTML("afterbegin", liTag);
+            });
+
+        }
+        const enableLiTag = (tag, value) => {
+            console.log("test space value == ", `"${value}"`);
+            let liText = "";
+            if (value.endsWith(" ")) {
+                value = value.slice(0, -1);
+            }
+            console.log("test space liText == ", tag, `'${value}'`);
+            let dropdownLi = tag.querySelectorAll("li");
+            $(dropdownLi).each(function (index, element) {
+                if (element.innerText.endsWith(" ")) {
+                    let elementInnerText = element.innerText.slice(0, -1);
+                    if (elementInnerText == value) {
+                        element.style.removeProperty("background-color");
+                        element.style.removeProperty("color");
+                        element.style.removeProperty("cursor");
+                        element.style.removeProperty("pointer-events");
+                    }
+                } else {
+                    if (element.innerText == value) {
+                        element.style.removeProperty("background-color");
+                        element.style.removeProperty("color");
+                        element.style.removeProperty("cursor");
+                        element.style.removeProperty("pointer-events");
+
+                    }
+                }
+
+
+
+
+            })
+        }
+
+        function remove(element, tag) {
+            // if (varientRemove == 1) {
+            //     let index  = tags.indexOf(tag);
+            //     tags = [...tags.slice(0, index), ...tags.slice(index + 1)];
+            //     element.parentElement.remove();
+            //     varientRemove = 0;
+            // }
+            // else{
+            let dropdownUl = element.parentNode.parentNode.parentNode.children[1].children[0];
+            enableLiTag(dropdownUl, tag);
+
+            let index = tags.indexOf(tag);
+            tags = [...tags.slice(0, index), ...tags.slice(index + 1)];
+            element.parentElement.remove();
+            // }
+        }
+
+        function addTag(e) {
+            if (e.key == "Enter" || e.keyCode == 32) {
+                if (dropdownBox) {
+                    dropdownBox.classList.add("d-none");
+                }
+
+                tags = [];
+                let tag = e.target.value.replace(/\s+/g, ' ');
+                let allText = e.target.value.replace(/\s+/g, ' ');
+                if (tag.length > 1 && !tags.includes(tag)) {
+                    console.log("tag tag ", ulTag);
+                    if (tags.length < 10) {
+                        if (ulTag.children.length > 1) {
+                            ulTag.querySelectorAll("li").forEach(li => {
+                                li = li.innerText.split(" ")
+                                tags.push(li[0])
+                            });
+                        }
+                        tag.split(',' || " ").forEach(tag => {
+
+                            tag = tag.split(' ');
+                            if (!tags.includes(tag[0])) {
+                                tags.push(tag[0])
+                            } else {
+                                e.target.value = "";
+                            }
+                            console.log("log from split = ", tags, tag);
+                            createTag(ulTag);
+                        });
+                    }
+                }
+                e.target.value = "";
+            }
+        }
+        document.addEventListener("keyup", addTag)
+    </script>
+
+    <script>
+        const pageNotReload = (e) => {
+            e.preventDefault();
+        }
+    </script>
+
+</body>
+
+</html>
