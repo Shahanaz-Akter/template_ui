@@ -7,13 +7,12 @@
     <title>Template UI</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/fontawesome_min.css">
-
     <!-- poppins font-family -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-
-
+    <link rel="stylesheet" href="assets/css/poppins.css">
     <!-- data table css -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css">
+
+
 
     <style>
         * {
@@ -23,9 +22,9 @@
 
         body {
             font-family: 'Poppins', sans-serif;
+            overflow: hidden;
 
             box-sizing: border-box;
-            overflow: hidden;
         }
 
         /* search button in nav css */
@@ -77,18 +76,9 @@
             display: none;
         }
 
-        .move_icon {
-            transform: rotate(180deg);
-        }
-
         /* checking input css */
         .checking_input:checked~.ch_list {
             display: block;
-        }
-
-        .checking_input:checked~.pa_list .move_icon {
-
-            transform: rotate(0deg);
         }
 
         .yy:hover {
@@ -100,7 +90,6 @@
             border-collapse: collapse;
             width: 100%;
             border-radius: 10px !important;
-            overflow-y: scroll;
             /* margin: 0 auto; */
         }
 
@@ -114,12 +103,26 @@
             border-collapse: collapse !important;
         }
 
+        .table thead {
+            width: 100% !important;
+            padding-right: 0px !important;
+
+        }
+
         th,
         td {
             text-align: center !important;
-            padding: 30px 20px !important;
+            padding: 0px 23px !important;
         }
 
+
+        /* @media (min-width: 992px) {
+            .dataTables_scrollHeadInner {
+                padding-right: 0px !important;
+                width: 100vw;
+            }
+
+        } */
 
         th {
             background-color: #3D3D3D !important;
@@ -143,6 +146,8 @@
             border-bottom-right-radius: 10px !important;
         }
 
+
+
         #example_filter {
             display: none;
         }
@@ -155,12 +160,6 @@
     </style>
 
     <style>
-        #example_length {
-            /* border: 2px solid red !important; */
-            display: flex;
-            /* justify-content: space-around; */
-        }
-
         .dataTables_length {
             color: #919C9D;
             /* border: 2px solid red; */
@@ -180,38 +179,22 @@
             padding-top: 2rem !important;
         }
 
-        .dataTables_paginate {
-            color: #919C9D !important;
-        }
-
-
-        .dataTables_scrollHeadInner {
-            box-sizing: border-box !important;
-            width: 100% !important;
-            padding-right: 0px !important;
-        }
-
-        #example {
-            margin-top: 20px !important;
-        }
-
-        .dt-row {
-            margin-top: 0px !important;
-        }
-
-        .txtt {
-            font-size: 14px;
+        #example_length {
+            /* border: 2px solid red !important; */
+            display: flex;
+            /* justify-content: space-around; */
         }
 
         table[aria-describedby="example_info"] thead,
         table[aria-describedby="example_info"] tfoot {
-            display: none;
+            /* display: none; */
         }
     </style>
-
 </head>
 
+
 <body>
+
     <!-- navbar start -->
     <nav class="d-flex justify-content-between align-items-center border text-primary bg-white p-2">
         <div>
@@ -265,7 +248,7 @@
                 <div style="border-radius: 7px; border: 1px solid #DFDFDF; background: #DFDFDF;" class="ps-2 pe-2  mt-1" style="">
                     <span class="">
                         <!-- <i class="fa-brands fa-slack fa-fade me-2  text-dark"
-                        style="border-radius: 50%; padding: 0px;"></i> -->
+                            style="border-radius: 50%; padding: 0px;"></i> -->
 
                         <svg class="me-1 fa-fade bg-white" style="border-radius: 40%; font-size: 15px!important; height:20px; width: 20px; " width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -507,11 +490,12 @@
         <!-- right  part start -->
         <div class="p-4" style="border: 2px solid transparent; background: #EAEAEA; width: 1700px; height: 100vh!important;">
 
-            <div class="p-4" style="border-radius: 10px;  background: #FAFAFA; ">
+
+            <div class="p-4" style="border-radius: 10px;  background: #FAFAFA;">
+
 
                 <div class="d-flex justify-content-between mb-4">
                     <h4 class="fw-bold">Service List</h4>
-
                     <div style="position: relative;">
                         <input id="search-bar" class="form-control search-bar1" type="text" placeholder="Search.." style="text-align: left; padding-left: 35px; background: #F4FAFE;">
                         <span style="position: absolute; top: 7px; left: 5px;">
@@ -527,192 +511,263 @@
 
                 </div>
 
-                <!-- <div class="card p-4"> -->
-
-
-
-
-
                 <table id="example" class="table display" style="width:100%;">
-                    <div>
-                        <thead>
-                            <tr>
-                                <th>Serial No</th>
-                                <th>Name</th>
-                                <th>Description</th>
-                                <th>Price</th>
-                                <th>Time</th>
-                                <th>Duration</th>
-                                <th>Available Time</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
 
 
-                            <tr class="align-middle">
-                                <td>01</td>
-                                <td>Hair spa and Oil Message</td>
-                                <td>Hair Package Combo Offer</td>
-                                <td>BDT 3,000</td>
-                                <td>2 Hour</td>
 
-                                <td><img src="assets/img/vege.png" height="100px" width="auto" alt="not available"></td>
-                                <td>2 Hours</td>
+                    <thead>
+                        <tr class="align-middle">
+                            <th>Serial Number</th>
+                            <th>
+                                Name
 
-                                <td>
-                                    <span class="me-3"><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M6.1062 15.969L6.64762 15.3622C7.31194 14.6177 8.50383 14.7144 9.03933 15.5564C9.53818 16.3408 10.6219 16.4894 11.3136 15.8684L12.295 14.9873" stroke="#6F7D87" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path
-                                                d="M1 15.0984L5.0477 13.5416C5.3066 13.442 5.43605 13.3922 5.55716 13.3272C5.66474 13.2695 5.76729 13.2028 5.86375 13.128C5.97234 13.0437 6.07041 12.9456 6.26656 12.7495L14.4941 4.52191C15.2998 3.71623 15.2998 2.40995 14.4941 1.60426C13.6885 0.798579 12.3822 0.798578 11.5765 1.60426L3.34891 9.83183C3.15277 10.028 3.0547 10.126 2.97043 10.2346C2.89558 10.3311 2.82893 10.4336 2.77118 10.5412C2.70617 10.6623 2.65638 10.7918 2.55681 11.0507L1 15.0984ZM1 15.0984L2.50122 11.1953C2.60864 10.916 2.66235 10.7763 2.75448 10.7123C2.835 10.6564 2.93462 10.6353 3.0309 10.6537C3.14107 10.6747 3.24687 10.7805 3.45847 10.9921L5.10628 12.6399C5.31788 12.8515 5.42368 12.9573 5.44472 13.0675C5.4631 13.1638 5.44196 13.2634 5.38606 13.3439C5.32209 13.436 5.18244 13.4898 4.90313 13.5972L1 15.0984Z"
-                                                stroke="#6F7D87" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M10.4824 2.69727L13.4001 5.61491" stroke="#6F7D87" stroke-width="1.5" />
-                                        </svg>
-                                    </span>
-                                    <span><svg class="ms-2 text-danger" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M1 3.47059H15M6.25 11.7059V6.76471M9.75 11.7059V6.76471M11.5 15H4.5C3.5335 15 2.75 14.2626 2.75 13.3529V4.29412C2.75 3.83929 3.14175 3.47059 3.625 3.47059H12.375C12.8582 3.47059 13.25 3.83929 13.25 4.29412V13.3529C13.25 14.2626 12.4665 15 11.5 15ZM6.25 3.47059H9.75C10.2332 3.47059 10.625 3.10188 10.625 2.64706V1.82353C10.625 1.36871 10.2332 1 9.75 1H6.25C5.76675 1 5.375 1.36871 5.375 1.82353V2.64706C5.375 3.10188 5.76675 3.47059 6.25 3.47059Z"
-                                                stroke="#FF2828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg></span>
-                                </td>
-                            </tr>
+                            </th>
+                            <th>Description</th>
+                            <th>
 
-                            <tr class="align-middle">
-                                <td>02</td>
-                                <td>Hair spa and Oil Message</td>
-                                <td>Hair Package Combo Offer</td>
-                                <td>BDT 3,000</td>
-                                <td>2 Hour</td>
+                                Price
+                            </th>
+                            <th class="remove_as_ds">Time</th>
+                            <th class="remove_as_ds">Duration</th>
+                            <th class="position-relative remove_as_ds">
 
-                                <td><img src="assets/img/vege.png" height="100px" width="auto" alt="not available"></td>
-                                <td>2 Hours</td>
+                                <div class="invisible">nnn</div>
+                                <hr class="invisible" style="background:  black; height: 3px;">
+                                <div class="position-absolute" style="top: 20px; left:20px;"> Available Time
+                                </div>
 
-                                <td>
-                                    <span class="me-3"><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M6.1062 15.969L6.64762 15.3622C7.31194 14.6177 8.50383 14.7144 9.03933 15.5564C9.53818 16.3408 10.6219 16.4894 11.3136 15.8684L12.295 14.9873" stroke="#6F7D87" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path
-                                                d="M1 15.0984L5.0477 13.5416C5.3066 13.442 5.43605 13.3922 5.55716 13.3272C5.66474 13.2695 5.76729 13.2028 5.86375 13.128C5.97234 13.0437 6.07041 12.9456 6.26656 12.7495L14.4941 4.52191C15.2998 3.71623 15.2998 2.40995 14.4941 1.60426C13.6885 0.798579 12.3822 0.798578 11.5765 1.60426L3.34891 9.83183C3.15277 10.028 3.0547 10.126 2.97043 10.2346C2.89558 10.3311 2.82893 10.4336 2.77118 10.5412C2.70617 10.6623 2.65638 10.7918 2.55681 11.0507L1 15.0984ZM1 15.0984L2.50122 11.1953C2.60864 10.916 2.66235 10.7763 2.75448 10.7123C2.835 10.6564 2.93462 10.6353 3.0309 10.6537C3.14107 10.6747 3.24687 10.7805 3.45847 10.9921L5.10628 12.6399C5.31788 12.8515 5.42368 12.9573 5.44472 13.0675C5.4631 13.1638 5.44196 13.2634 5.38606 13.3439C5.32209 13.436 5.18244 13.4898 4.90313 13.5972L1 15.0984Z"
-                                                stroke="#6F7D87" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M10.4824 2.69727L13.4001 5.61491" stroke="#6F7D87" stroke-width="1.5" />
-                                        </svg>
-                                    </span>
-                                    <span><svg class="ms-2 text-danger" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M1 3.47059H15M6.25 11.7059V6.76471M9.75 11.7059V6.76471M11.5 15H4.5C3.5335 15 2.75 14.2626 2.75 13.3529V4.29412C2.75 3.83929 3.14175 3.47059 3.625 3.47059H12.375C12.8582 3.47059 13.25 3.83929 13.25 4.29412V13.3529C13.25 14.2626 12.4665 15 11.5 15ZM6.25 3.47059H9.75C10.2332 3.47059 10.625 3.10188 10.625 2.64706V1.82353C10.625 1.36871 10.2332 1 9.75 1H6.25C5.76675 1 5.375 1.36871 5.375 1.82353V2.64706C5.375 3.10188 5.76675 3.47059 6.25 3.47059Z"
-                                                stroke="#FF2828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg></span>
-                                </td>
-                            </tr>
-                            <tr class="align-middle">
-                                <td>03</td>
-                                <td>Hair spa and Oil Message</td>
-                                <td>Hair Package Combo Offer</td>
-                                <td>BDT 3,000</td>
-                                <td>2 Hour</td>
+                            </th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
 
-                                <td><img src="assets/img/vege.png" height="100px" width="auto" alt="not available"></td>
-                                <td>2 Hours</td>
 
-                                <td>
-                                    <span class="me-3"><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M6.1062 15.969L6.64762 15.3622C7.31194 14.6177 8.50383 14.7144 9.03933 15.5564C9.53818 16.3408 10.6219 16.4894 11.3136 15.8684L12.295 14.9873" stroke="#6F7D87" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path
-                                                d="M1 15.0984L5.0477 13.5416C5.3066 13.442 5.43605 13.3922 5.55716 13.3272C5.66474 13.2695 5.76729 13.2028 5.86375 13.128C5.97234 13.0437 6.07041 12.9456 6.26656 12.7495L14.4941 4.52191C15.2998 3.71623 15.2998 2.40995 14.4941 1.60426C13.6885 0.798579 12.3822 0.798578 11.5765 1.60426L3.34891 9.83183C3.15277 10.028 3.0547 10.126 2.97043 10.2346C2.89558 10.3311 2.82893 10.4336 2.77118 10.5412C2.70617 10.6623 2.65638 10.7918 2.55681 11.0507L1 15.0984ZM1 15.0984L2.50122 11.1953C2.60864 10.916 2.66235 10.7763 2.75448 10.7123C2.835 10.6564 2.93462 10.6353 3.0309 10.6537C3.14107 10.6747 3.24687 10.7805 3.45847 10.9921L5.10628 12.6399C5.31788 12.8515 5.42368 12.9573 5.44472 13.0675C5.4631 13.1638 5.44196 13.2634 5.38606 13.3439C5.32209 13.436 5.18244 13.4898 4.90313 13.5972L1 15.0984Z"
-                                                stroke="#6F7D87" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M10.4824 2.69727L13.4001 5.61491" stroke="#6F7D87" stroke-width="1.5" />
-                                        </svg>
-                                    </span>
-                                    <span><svg class="ms-2 text-danger" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M1 3.47059H15M6.25 11.7059V6.76471M9.75 11.7059V6.76471M11.5 15H4.5C3.5335 15 2.75 14.2626 2.75 13.3529V4.29412C2.75 3.83929 3.14175 3.47059 3.625 3.47059H12.375C12.8582 3.47059 13.25 3.83929 13.25 4.29412V13.3529C13.25 14.2626 12.4665 15 11.5 15ZM6.25 3.47059H9.75C10.2332 3.47059 10.625 3.10188 10.625 2.64706V1.82353C10.625 1.36871 10.2332 1 9.75 1H6.25C5.76675 1 5.375 1.36871 5.375 1.82353V2.64706C5.375 3.10188 5.76675 3.47059 6.25 3.47059Z"
-                                                stroke="#FF2828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg></span>
-                                </td>
-                            </tr>
-                            <tr class="align-middle">
-                                <td>04</td>
-                                <td>Hair spa and Oil Message</td>
-                                <td>Hair Package Combo Offer</td>
-                                <td>BDT 3,000</td>
-                                <td>2 Hour</td>
+                    <tbody>
+                        <tr class="align-middle">
+                            <td>01</td>
 
-                                <td><img src="assets/img/vege.png" height="100px" width="auto" alt="not available"></td>
-                                <td>2 Hours</td>
+                            <td>UI2023
 
-                                <td>
-                                    <span class="me-3"><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M6.1062 15.969L6.64762 15.3622C7.31194 14.6177 8.50383 14.7144 9.03933 15.5564C9.53818 16.3408 10.6219 16.4894 11.3136 15.8684L12.295 14.9873" stroke="#6F7D87" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path
-                                                d="M1 15.0984L5.0477 13.5416C5.3066 13.442 5.43605 13.3922 5.55716 13.3272C5.66474 13.2695 5.76729 13.2028 5.86375 13.128C5.97234 13.0437 6.07041 12.9456 6.26656 12.7495L14.4941 4.52191C15.2998 3.71623 15.2998 2.40995 14.4941 1.60426C13.6885 0.798579 12.3822 0.798578 11.5765 1.60426L3.34891 9.83183C3.15277 10.028 3.0547 10.126 2.97043 10.2346C2.89558 10.3311 2.82893 10.4336 2.77118 10.5412C2.70617 10.6623 2.65638 10.7918 2.55681 11.0507L1 15.0984ZM1 15.0984L2.50122 11.1953C2.60864 10.916 2.66235 10.7763 2.75448 10.7123C2.835 10.6564 2.93462 10.6353 3.0309 10.6537C3.14107 10.6747 3.24687 10.7805 3.45847 10.9921L5.10628 12.6399C5.31788 12.8515 5.42368 12.9573 5.44472 13.0675C5.4631 13.1638 5.44196 13.2634 5.38606 13.3439C5.32209 13.436 5.18244 13.4898 4.90313 13.5972L1 15.0984Z"
-                                                stroke="#6F7D87" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M10.4824 2.69727L13.4001 5.61491" stroke="#6F7D87" stroke-width="1.5" />
-                                        </svg>
-                                    </span>
-                                    <span><svg class="ms-2 text-danger" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M1 3.47059H15M6.25 11.7059V6.76471M9.75 11.7059V6.76471M11.5 15H4.5C3.5335 15 2.75 14.2626 2.75 13.3529V4.29412C2.75 3.83929 3.14175 3.47059 3.625 3.47059H12.375C12.8582 3.47059 13.25 3.83929 13.25 4.29412V13.3529C13.25 14.2626 12.4665 15 11.5 15ZM6.25 3.47059H9.75C10.2332 3.47059 10.625 3.10188 10.625 2.64706V1.82353C10.625 1.36871 10.2332 1 9.75 1H6.25C5.76675 1 5.375 1.36871 5.375 1.82353V2.64706C5.375 3.10188 5.76675 3.47059 6.25 3.47059Z"
-                                                stroke="#FF2828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg></span>
-                                </td>
-                            </tr>
-                            <tr class="align-middle">
-                                <td>05</td>
-                                <td>Hair spa and Oil Message</td>
-                                <td>Hair Package Combo Offer</td>
-                                <td>BDT 3,000</td>
-                                <td>2 Hour</td>
 
-                                <td><img src="assets/img/vege.png" height="100px" width="auto" alt="not available"></td>
-                                <td>2 Hours</td>
+                            </td>
+                            <td><img src="assets/img/vege.png" height="130px" width="auto" alt="not available"></td>
+                            <td>Camera
+                            <td>Camera1
 
-                                <td>
-                                    <span class="me-3"><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M6.1062 15.969L6.64762 15.3622C7.31194 14.6177 8.50383 14.7144 9.03933 15.5564C9.53818 16.3408 10.6219 16.4894 11.3136 15.8684L12.295 14.9873" stroke="#6F7D87" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path
-                                                d="M1 15.0984L5.0477 13.5416C5.3066 13.442 5.43605 13.3922 5.55716 13.3272C5.66474 13.2695 5.76729 13.2028 5.86375 13.128C5.97234 13.0437 6.07041 12.9456 6.26656 12.7495L14.4941 4.52191C15.2998 3.71623 15.2998 2.40995 14.4941 1.60426C13.6885 0.798579 12.3822 0.798578 11.5765 1.60426L3.34891 9.83183C3.15277 10.028 3.0547 10.126 2.97043 10.2346C2.89558 10.3311 2.82893 10.4336 2.77118 10.5412C2.70617 10.6623 2.65638 10.7918 2.55681 11.0507L1 15.0984ZM1 15.0984L2.50122 11.1953C2.60864 10.916 2.66235 10.7763 2.75448 10.7123C2.835 10.6564 2.93462 10.6353 3.0309 10.6537C3.14107 10.6747 3.24687 10.7805 3.45847 10.9921L5.10628 12.6399C5.31788 12.8515 5.42368 12.9573 5.44472 13.0675C5.4631 13.1638 5.44196 13.2634 5.38606 13.3439C5.32209 13.436 5.18244 13.4898 4.90313 13.5972L1 15.0984Z"
-                                                stroke="#6F7D87" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M10.4824 2.69727L13.4001 5.61491" stroke="#6F7D87" stroke-width="1.5" />
-                                        </svg>
-                                    </span>
-                                    <span><svg class="ms-2 text-danger" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M1 3.47059H15M6.25 11.7059V6.76471M9.75 11.7059V6.76471M11.5 15H4.5C3.5335 15 2.75 14.2626 2.75 13.3529V4.29412C2.75 3.83929 3.14175 3.47059 3.625 3.47059H12.375C12.8582 3.47059 13.25 3.83929 13.25 4.29412V13.3529C13.25 14.2626 12.4665 15 11.5 15ZM6.25 3.47059H9.75C10.2332 3.47059 10.625 3.10188 10.625 2.64706V1.82353C10.625 1.36871 10.2332 1 9.75 1H6.25C5.76675 1 5.375 1.36871 5.375 1.82353V2.64706C5.375 3.10188 5.76675 3.47059 6.25 3.47059Z"
-                                                stroke="#FF2828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg></span>
-                                </td>
-                            </tr>
-                            <tr class="align-middle">
-                                <td>06</td>
-                                <td>Hair spa and Oil Message</td>
-                                <td>Hair Package Combo Offer</td>
-                                <td>BDT 3,000</td>
-                                <td>2 Hour</td>
+                            </td>
+                            <td>
+                                <div>Uttara, sector-01;
+                                    <br>
+                                    Road 01.
+                                    <br>
+                                    Dhaka-1230
+                                </div>
+                            </td>
+                            <td>
+                                18/12/2023
 
-                                <td><img src="assets/img/vege.png" height="100px" width="auto" alt="not available"></td>
-                                <td>2 Hours</td>
+                                <div>
+                                    <span class="" style=" background:; padding:5px 20px; color: ;"></span>
+                                </div>
+                            </td>
 
-                                <td>
-                                    <span class="me-3"><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M6.1062 15.969L6.64762 15.3622C7.31194 14.6177 8.50383 14.7144 9.03933 15.5564C9.53818 16.3408 10.6219 16.4894 11.3136 15.8684L12.295 14.9873" stroke="#6F7D87" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path
-                                                d="M1 15.0984L5.0477 13.5416C5.3066 13.442 5.43605 13.3922 5.55716 13.3272C5.66474 13.2695 5.76729 13.2028 5.86375 13.128C5.97234 13.0437 6.07041 12.9456 6.26656 12.7495L14.4941 4.52191C15.2998 3.71623 15.2998 2.40995 14.4941 1.60426C13.6885 0.798579 12.3822 0.798578 11.5765 1.60426L3.34891 9.83183C3.15277 10.028 3.0547 10.126 2.97043 10.2346C2.89558 10.3311 2.82893 10.4336 2.77118 10.5412C2.70617 10.6623 2.65638 10.7918 2.55681 11.0507L1 15.0984ZM1 15.0984L2.50122 11.1953C2.60864 10.916 2.66235 10.7763 2.75448 10.7123C2.835 10.6564 2.93462 10.6353 3.0309 10.6537C3.14107 10.6747 3.24687 10.7805 3.45847 10.9921L5.10628 12.6399C5.31788 12.8515 5.42368 12.9573 5.44472 13.0675C5.4631 13.1638 5.44196 13.2634 5.38606 13.3439C5.32209 13.436 5.18244 13.4898 4.90313 13.5972L1 15.0984Z"
-                                                stroke="#6F7D87" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M10.4824 2.69727L13.4001 5.61491" stroke="#6F7D87" stroke-width="1.5" />
-                                        </svg>
-                                    </span>
-                                    <span><svg class="ms-2 text-danger" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M1 3.47059H15M6.25 11.7059V6.76471M9.75 11.7059V6.76471M11.5 15H4.5C3.5335 15 2.75 14.2626 2.75 13.3529V4.29412C2.75 3.83929 3.14175 3.47059 3.625 3.47059H12.375C12.8582 3.47059 13.25 3.83929 13.25 4.29412V13.3529C13.25 14.2626 12.4665 15 11.5 15ZM6.25 3.47059H9.75C10.2332 3.47059 10.625 3.10188 10.625 2.64706V1.82353C10.625 1.36871 10.2332 1 9.75 1H6.25C5.76675 1 5.375 1.36871 5.375 1.82353V2.64706C5.375 3.10188 5.76675 3.47059 6.25 3.47059Z"
-                                                stroke="#FF2828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg></span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </div>
+                            <td>
+                                <span class="me-3"><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6.1062 15.969L6.64762 15.3622C7.31194 14.6177 8.50383 14.7144 9.03933 15.5564C9.53818 16.3408 10.6219 16.4894 11.3136 15.8684L12.295 14.9873" stroke="#6F7D87" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M1 15.0984L5.0477 13.5416C5.3066 13.442 5.43605 13.3922 5.55716 13.3272C5.66474 13.2695 5.76729 13.2028 5.86375 13.128C5.97234 13.0437 6.07041 12.9456 6.26656 12.7495L14.4941 4.52191C15.2998 3.71623 15.2998 2.40995 14.4941 1.60426C13.6885 0.798579 12.3822 0.798578 11.5765 1.60426L3.34891 9.83183C3.15277 10.028 3.0547 10.126 2.97043 10.2346C2.89558 10.3311 2.82893 10.4336 2.77118 10.5412C2.70617 10.6623 2.65638 10.7918 2.55681 11.0507L1 15.0984ZM1 15.0984L2.50122 11.1953C2.60864 10.916 2.66235 10.7763 2.75448 10.7123C2.835 10.6564 2.93462 10.6353 3.0309 10.6537C3.14107 10.6747 3.24687 10.7805 3.45847 10.9921L5.10628 12.6399C5.31788 12.8515 5.42368 12.9573 5.44472 13.0675C5.4631 13.1638 5.44196 13.2634 5.38606 13.3439C5.32209 13.436 5.18244 13.4898 4.90313 13.5972L1 15.0984Z"
+                                            stroke="#6F7D87" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M10.4824 2.69727L13.4001 5.61491" stroke="#6F7D87" stroke-width="1.5" />
+                                    </svg>
+                                </span>
+                                <span><svg class="ms-2 text-danger" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M1 3.47059H15M6.25 11.7059V6.76471M9.75 11.7059V6.76471M11.5 15H4.5C3.5335 15 2.75 14.2626 2.75 13.3529V4.29412C2.75 3.83929 3.14175 3.47059 3.625 3.47059H12.375C12.8582 3.47059 13.25 3.83929 13.25 4.29412V13.3529C13.25 14.2626 12.4665 15 11.5 15ZM6.25 3.47059H9.75C10.2332 3.47059 10.625 3.10188 10.625 2.64706V1.82353C10.625 1.36871 10.2332 1 9.75 1H6.25C5.76675 1 5.375 1.36871 5.375 1.82353V2.64706C5.375 3.10188 5.76675 3.47059 6.25 3.47059Z"
+                                            stroke="#FF2828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg></span>
+                            </td>
+                        </tr>
+
+                        <tr class="align-middle">
+                            <td>01</td>
+
+                            <td>UI2023
+
+
+                            </td>
+                            <td><img src="assets/img/vege.png" height="130px" width="auto" alt="not available"></td>
+                            <td>Camera
+                            <td>Camera1
+
+                            </td>
+                            <td>
+                                <div>Uttara, sector-01;
+                                    <br>
+                                    Road 01.
+                                    <br>
+                                    Dhaka-1230
+                                </div>
+                            </td>
+                            <td>
+                                18/12/2023
+
+                                <div>
+                                    <span class="" style=" background:; padding:5px 20px; color: ;"></span>
+                                </div>
+                            </td>
+
+                            <td>
+                                <span class="me-3"><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6.1062 15.969L6.64762 15.3622C7.31194 14.6177 8.50383 14.7144 9.03933 15.5564C9.53818 16.3408 10.6219 16.4894 11.3136 15.8684L12.295 14.9873" stroke="#6F7D87" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M1 15.0984L5.0477 13.5416C5.3066 13.442 5.43605 13.3922 5.55716 13.3272C5.66474 13.2695 5.76729 13.2028 5.86375 13.128C5.97234 13.0437 6.07041 12.9456 6.26656 12.7495L14.4941 4.52191C15.2998 3.71623 15.2998 2.40995 14.4941 1.60426C13.6885 0.798579 12.3822 0.798578 11.5765 1.60426L3.34891 9.83183C3.15277 10.028 3.0547 10.126 2.97043 10.2346C2.89558 10.3311 2.82893 10.4336 2.77118 10.5412C2.70617 10.6623 2.65638 10.7918 2.55681 11.0507L1 15.0984ZM1 15.0984L2.50122 11.1953C2.60864 10.916 2.66235 10.7763 2.75448 10.7123C2.835 10.6564 2.93462 10.6353 3.0309 10.6537C3.14107 10.6747 3.24687 10.7805 3.45847 10.9921L5.10628 12.6399C5.31788 12.8515 5.42368 12.9573 5.44472 13.0675C5.4631 13.1638 5.44196 13.2634 5.38606 13.3439C5.32209 13.436 5.18244 13.4898 4.90313 13.5972L1 15.0984Z"
+                                            stroke="#6F7D87" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M10.4824 2.69727L13.4001 5.61491" stroke="#6F7D87" stroke-width="1.5" />
+                                    </svg>
+                                </span>
+                                <span><svg class="ms-2 text-danger" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M1 3.47059H15M6.25 11.7059V6.76471M9.75 11.7059V6.76471M11.5 15H4.5C3.5335 15 2.75 14.2626 2.75 13.3529V4.29412C2.75 3.83929 3.14175 3.47059 3.625 3.47059H12.375C12.8582 3.47059 13.25 3.83929 13.25 4.29412V13.3529C13.25 14.2626 12.4665 15 11.5 15ZM6.25 3.47059H9.75C10.2332 3.47059 10.625 3.10188 10.625 2.64706V1.82353C10.625 1.36871 10.2332 1 9.75 1H6.25C5.76675 1 5.375 1.36871 5.375 1.82353V2.64706C5.375 3.10188 5.76675 3.47059 6.25 3.47059Z"
+                                            stroke="#FF2828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg></span>
+                            </td>
+                        </tr>
+                        <tr class="align-middle">
+                            <td>01</td>
+
+                            <td>UI2023
+
+
+                            </td>
+                            <td><img src="assets/img/vege.png" height="130px" width="auto" alt="not available"></td>
+                            <td>Camera
+                            <td>Camera1
+
+                            </td>
+                            <td>
+                                <div>Uttara, sector-01;
+                                    <br>
+                                    Road 01.
+                                    <br>
+                                    Dhaka-1230
+                                </div>
+                            </td>
+                            <td>
+                                18/12/2023
+
+                                <div>
+                                    <span class="" style=" background:; padding:5px 20px; color: ;"></span>
+                                </div>
+                            </td>
+
+                            <td>
+                                <span class="me-3"><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6.1062 15.969L6.64762 15.3622C7.31194 14.6177 8.50383 14.7144 9.03933 15.5564C9.53818 16.3408 10.6219 16.4894 11.3136 15.8684L12.295 14.9873" stroke="#6F7D87" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M1 15.0984L5.0477 13.5416C5.3066 13.442 5.43605 13.3922 5.55716 13.3272C5.66474 13.2695 5.76729 13.2028 5.86375 13.128C5.97234 13.0437 6.07041 12.9456 6.26656 12.7495L14.4941 4.52191C15.2998 3.71623 15.2998 2.40995 14.4941 1.60426C13.6885 0.798579 12.3822 0.798578 11.5765 1.60426L3.34891 9.83183C3.15277 10.028 3.0547 10.126 2.97043 10.2346C2.89558 10.3311 2.82893 10.4336 2.77118 10.5412C2.70617 10.6623 2.65638 10.7918 2.55681 11.0507L1 15.0984ZM1 15.0984L2.50122 11.1953C2.60864 10.916 2.66235 10.7763 2.75448 10.7123C2.835 10.6564 2.93462 10.6353 3.0309 10.6537C3.14107 10.6747 3.24687 10.7805 3.45847 10.9921L5.10628 12.6399C5.31788 12.8515 5.42368 12.9573 5.44472 13.0675C5.4631 13.1638 5.44196 13.2634 5.38606 13.3439C5.32209 13.436 5.18244 13.4898 4.90313 13.5972L1 15.0984Z"
+                                            stroke="#6F7D87" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M10.4824 2.69727L13.4001 5.61491" stroke="#6F7D87" stroke-width="1.5" />
+                                    </svg>
+                                </span>
+                                <span><svg class="ms-2 text-danger" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M1 3.47059H15M6.25 11.7059V6.76471M9.75 11.7059V6.76471M11.5 15H4.5C3.5335 15 2.75 14.2626 2.75 13.3529V4.29412C2.75 3.83929 3.14175 3.47059 3.625 3.47059H12.375C12.8582 3.47059 13.25 3.83929 13.25 4.29412V13.3529C13.25 14.2626 12.4665 15 11.5 15ZM6.25 3.47059H9.75C10.2332 3.47059 10.625 3.10188 10.625 2.64706V1.82353C10.625 1.36871 10.2332 1 9.75 1H6.25C5.76675 1 5.375 1.36871 5.375 1.82353V2.64706C5.375 3.10188 5.76675 3.47059 6.25 3.47059Z"
+                                            stroke="#FF2828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg></span>
+                            </td>
+                        </tr>
+                        <tr class="align-middle">
+                            <td>01</td>
+
+                            <td>UI2023
+
+
+                            </td>
+                            <td><img src="assets/img/vege.png" height="130px" width="auto" alt="not available"></td>
+                            <td>Camera
+                            <td>Camera1
+
+                            </td>
+                            <td>
+                                <div>Uttara, sector-01;
+                                    <br>
+                                    Road 01.
+                                    <br>
+                                    Dhaka-1230
+                                </div>
+                            </td>
+                            <td>
+                                18/12/2023
+
+                                <div>
+                                    <span class="" style=" background:; padding:5px 20px; color: ;"></span>
+                                </div>
+                            </td>
+
+                            <td>
+                                <span class="me-3"><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6.1062 15.969L6.64762 15.3622C7.31194 14.6177 8.50383 14.7144 9.03933 15.5564C9.53818 16.3408 10.6219 16.4894 11.3136 15.8684L12.295 14.9873" stroke="#6F7D87" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M1 15.0984L5.0477 13.5416C5.3066 13.442 5.43605 13.3922 5.55716 13.3272C5.66474 13.2695 5.76729 13.2028 5.86375 13.128C5.97234 13.0437 6.07041 12.9456 6.26656 12.7495L14.4941 4.52191C15.2998 3.71623 15.2998 2.40995 14.4941 1.60426C13.6885 0.798579 12.3822 0.798578 11.5765 1.60426L3.34891 9.83183C3.15277 10.028 3.0547 10.126 2.97043 10.2346C2.89558 10.3311 2.82893 10.4336 2.77118 10.5412C2.70617 10.6623 2.65638 10.7918 2.55681 11.0507L1 15.0984ZM1 15.0984L2.50122 11.1953C2.60864 10.916 2.66235 10.7763 2.75448 10.7123C2.835 10.6564 2.93462 10.6353 3.0309 10.6537C3.14107 10.6747 3.24687 10.7805 3.45847 10.9921L5.10628 12.6399C5.31788 12.8515 5.42368 12.9573 5.44472 13.0675C5.4631 13.1638 5.44196 13.2634 5.38606 13.3439C5.32209 13.436 5.18244 13.4898 4.90313 13.5972L1 15.0984Z"
+                                            stroke="#6F7D87" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M10.4824 2.69727L13.4001 5.61491" stroke="#6F7D87" stroke-width="1.5" />
+                                    </svg>
+                                </span>
+                                <span><svg class="ms-2 text-danger" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M1 3.47059H15M6.25 11.7059V6.76471M9.75 11.7059V6.76471M11.5 15H4.5C3.5335 15 2.75 14.2626 2.75 13.3529V4.29412C2.75 3.83929 3.14175 3.47059 3.625 3.47059H12.375C12.8582 3.47059 13.25 3.83929 13.25 4.29412V13.3529C13.25 14.2626 12.4665 15 11.5 15ZM6.25 3.47059H9.75C10.2332 3.47059 10.625 3.10188 10.625 2.64706V1.82353C10.625 1.36871 10.2332 1 9.75 1H6.25C5.76675 1 5.375 1.36871 5.375 1.82353V2.64706C5.375 3.10188 5.76675 3.47059 6.25 3.47059Z"
+                                            stroke="#FF2828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg></span>
+                            </td>
+                        </tr>
+                        <tr class="align-middle">
+                            <td>01</td>
+
+                            <td>UI2023
+
+
+                            </td>
+                            <td><img src="assets/img/vege.png" height="130px" width="auto" alt="not available"></td>
+                            <td>Camera
+                            <td>Camera1
+
+                            </td>
+                            <td>
+                                <div>Uttara, sector-01;
+                                    <br>
+                                    Road 01.
+                                    <br>
+                                    Dhaka-1230
+                                </div>
+                            </td>
+                            <td>
+                                18/12/2023
+
+                                <div>
+                                    <span class="" style=" background:; padding:5px 20px; color: ;"></span>
+                                </div>
+                            </td>
+
+                            <td>
+                                <span class="me-3"><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6.1062 15.969L6.64762 15.3622C7.31194 14.6177 8.50383 14.7144 9.03933 15.5564C9.53818 16.3408 10.6219 16.4894 11.3136 15.8684L12.295 14.9873" stroke="#6F7D87" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M1 15.0984L5.0477 13.5416C5.3066 13.442 5.43605 13.3922 5.55716 13.3272C5.66474 13.2695 5.76729 13.2028 5.86375 13.128C5.97234 13.0437 6.07041 12.9456 6.26656 12.7495L14.4941 4.52191C15.2998 3.71623 15.2998 2.40995 14.4941 1.60426C13.6885 0.798579 12.3822 0.798578 11.5765 1.60426L3.34891 9.83183C3.15277 10.028 3.0547 10.126 2.97043 10.2346C2.89558 10.3311 2.82893 10.4336 2.77118 10.5412C2.70617 10.6623 2.65638 10.7918 2.55681 11.0507L1 15.0984ZM1 15.0984L2.50122 11.1953C2.60864 10.916 2.66235 10.7763 2.75448 10.7123C2.835 10.6564 2.93462 10.6353 3.0309 10.6537C3.14107 10.6747 3.24687 10.7805 3.45847 10.9921L5.10628 12.6399C5.31788 12.8515 5.42368 12.9573 5.44472 13.0675C5.4631 13.1638 5.44196 13.2634 5.38606 13.3439C5.32209 13.436 5.18244 13.4898 4.90313 13.5972L1 15.0984Z"
+                                            stroke="#6F7D87" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M10.4824 2.69727L13.4001 5.61491" stroke="#6F7D87" stroke-width="1.5" />
+                                    </svg>
+                                </span>
+                                <span><svg class="ms-2 text-danger" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M1 3.47059H15M6.25 11.7059V6.76471M9.75 11.7059V6.76471M11.5 15H4.5C3.5335 15 2.75 14.2626 2.75 13.3529V4.29412C2.75 3.83929 3.14175 3.47059 3.625 3.47059H12.375C12.8582 3.47059 13.25 3.83929 13.25 4.29412V13.3529C13.25 14.2626 12.4665 15 11.5 15ZM6.25 3.47059H9.75C10.2332 3.47059 10.625 3.10188 10.625 2.64706V1.82353C10.625 1.36871 10.2332 1 9.75 1H6.25C5.76675 1 5.375 1.36871 5.375 1.82353V2.64706C5.375 3.10188 5.76675 3.47059 6.25 3.47059Z"
+                                            stroke="#FF2828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg></span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
                 </table>
-
-
 
 
             </div>
@@ -722,21 +777,34 @@
     </div>
 
     <!-- table jquery -->
-    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script src="assets/js/jquery-3.7.0.js"></script>
+    <script src="assets/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/dataTables.bootstrap5.min.js"></script>
 
-    <script>// new DataTable('#example');</script>
+    <!-- <script>
 
+        new DataTable('#example', {
+            paging: true,
+            scrollCollapse: false,
+            scrollY: '50vh'
+        });
+
+        let oTable = $('#example').DataTable();   //pay attention to capital D, which is mandatory to retrieve "api" datatables' object, as @Lionel said
+        $('.search-bar1').keyup(function () {
+            oTable.search($(this).val()).draw();
+        })
+    </script> -->
+
+
+    <!-- omor new js -->
     <script>
-
-        // new DataTable('#example', );
-
         let oTable = $('#example').DataTable({
             paging: true,
-            scrollCollapse: true,
-            scrollY: '50vh'
-        });   //pay attention to capital D, which is mandatory to retrieve "api" datatables' object, as @Lionel said
+            scrollCollapse: false,
+            scrollY: '55vh'
+        });
+
+        //pay attention to capital D, which is mandatory to retrieve "api" datatables' object, as @Lionel said
         $('.search-bar1').keyup(function () {
             oTable.search($(this).val()).draw();
         })
@@ -745,16 +813,18 @@
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/fontawesome_min.js"></script>
 
+
     <!-- append filter with icon tag  inside the built in table paragraph-->
     <script>
-
         // Find the parent div by its ID
-        var example_length = document.getElementById("example_length");
+        var example_length = document.querySelector("#example_length");
 
         if (example_length) {
+
             // Create a nexample_lengthew i tag
             var spanTag = document.createElement("span");
-            spanTag.classList = "ms-2 mt-1";
+            spanTag.classList = "ms-4 mt-1";
+
 
             var iTag = document.createElement("i");
 
@@ -769,38 +839,27 @@
             let button = document.createElement("button");
             button.style.padding = '7px 20px';
             button.style.background = '#2871FF';
-            // button.style.background = 'black';
-
-
-
             button.style.color = 'white';
             button.style.borderRadius = '10px';
             button.style.border = 'none';
             button.style.height = '50px';
             button.style.width = '150px';
+            button.style.marginBottom = '13px';
 
 
 
-            button.innerText = "Add to Cart";
 
-
-            // <a href="/service.html">
-            //     <button style="padding: 5px 20px; background-color: blue; color: white;">button</button>
-            //     </a>
-
-            let a_tag = document.createElement("a");
-            a_tag.setAttribute('href', "Service.html");
-
-            console.log(a_tag);
             // spanTag3.classList = 'ms-5';
             spanTag3.style.marginLeft = "1040px";
             spanTag3.style.paddingLeft = "0px";
 
-            a_tag.appendChild(button);
-            spanTag3.appendChild(a_tag);
 
-            console.log(a_tag);
-            console.log(spanTag3);
+
+
+            button.innerText = "Add to Cart";
+            spanTag3.appendChild(button);
+
+
 
             example_length.appendChild(spanTag);
             example_length.appendChild(spanTag2);
@@ -808,8 +867,8 @@
         }
 
 
+        console.log(example_length);
     </script>
-
 
 
 
